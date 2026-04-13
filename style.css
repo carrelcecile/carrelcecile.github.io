@@ -12,9 +12,9 @@
   --text-primary:   #f0eee8;
   --text-secondary: rgba(224,218,208,0.65);
   --text-muted:     rgba(224,218,208,0.35);
-  --gold:        #c4a97d;
-  --gold-muted:  rgba(196,169,125,0.18);
-  --gold-border: rgba(196,169,125,0.3);
+  --gold:        #5e9e7e;
+  --gold-muted:  rgba(94,158,126,0.15);
+  --gold-border: rgba(94,158,126,0.28);
   --teal:        #4db89a;
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
