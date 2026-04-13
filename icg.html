@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICG Works — Cécile Carrel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .icg-hero {
+      min-height: 38vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 100px 3rem 56px;
+      background: var(--navy-deep);
+      position: relative;
+      border-bottom: 1px solid var(--navy-border-soft);
+    }
+
+    .icg-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .icg-hero-inner {
+      max-width: var(--max);
+      width: 100%;
+      margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      transition: color var(--ease);
+    }
+    .back-link:hover { color: var(--gold); }
+
+    .icg-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .icg-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .icg-title em { font-style: italic; color: var(--text-muted); }
+
+    .icg-summary {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 600px;
+    }
+
+    .icg-body {
+      background: var(--navy-deep);
+      padding: 72px 3rem 96px;
+    }
+
+    .icg-container {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .works-region {
+      margin-bottom: 52px;
+    }
+    .works-region:last-child { margin-bottom: 0; }
+
+    .region-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gold-border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .region-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--navy-border-soft);
+    }
+
+    .works-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--navy-border-soft);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .work-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--navy-border-soft);
+      transition: background var(--ease);
+      text-decoration: none;
+      color: inherit;
+    }
+    .work-item:last-child { border-bottom: none; }
+    .work-item:hover { background: var(--navy-mid); }
+
+    .work-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: 0.5;
+      flex-shrink: 0;
+      margin-top: 9px;
+    }
+
+    .work-content { flex: 1; }
+
+    .work-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .work-detail {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .work-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+      padding-top: 4px;
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .icg-context {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-border-soft);
+      border-radius: 3px;
+      padding: 24px 28px;
+      margin-bottom: 52px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .context-stat { }
+    .context-val {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .context-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      .icg-hero { padding: 100px 1.5rem 48px; }
+      .icg-body { padding: 48px 1.5rem 72px; }
+      .icg-context { grid-template-columns: 1fr 1fr; }
+      .work-item { flex-wrap: wrap; gap: 8px; }
+      .work-date { min-width: auto; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-name">Cécile Carrel</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#engineering">Engineering</a>
+      <a href="index.html#research">Research</a>
+      <a href="mailto:c.j.carrel@lse.ac.uk" class="nav-cta">Contact ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="icg-hero">
+    <div class="icg-hero-inner">
+      <a href="index.html" class="back-link">← Back to portfolio</a>
+      <p class="icg-eyebrow">International Crisis Group · Jan – Sept 2025</p>
+      <h1 class="icg-title">Geopolitical Risk<br><em>Research & Analysis</em></h1>
+      <p class="icg-summary">
+        Research contributions to ICG's global conflict monitoring programme — producing published analysis for the UN Security Council, EU External Action Service, and three Foreign Ministries across 12 regional briefs, watchlist entries, and geospatial mapping tools.
+      </p>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="icg-body">
+    <div class="icg-container">
+
+      <!-- STATS -->
+      <div class="icg-context">
+        <div class="context-stat">
+          <div class="context-val">12+</div>
+          <div class="context-label">Published briefs, reports & watchlist entries</div>
+        </div>
+        <div class="context-stat">
+          <div class="context-val">3</div>
+          <div class="context-label">Foreign Ministries briefed</div>
+        </div>
+        <div class="context-stat">
+          <div class="context-val">5</div>
+          <div class="context-label">Regions covered — Indo-Pacific, MENA, Europe, Latin America, Sahel</div>
+        </div>
+      </div>
+
+      <!-- INDO-PACIFIC -->
+      <div class="works-region">
+        <div class="region-label">Indo-Pacific & Asia</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">The Philippines and Asia's Militarisation</p>
+              <p class="work-detail">Regional security architecture · Defence posture · US-Philippines alliance</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">U.S. and China Are Reshaping the Indo-Pacific Security Architecture</p>
+              <p class="work-detail">Great power competition · Alliance realignment · Strategic competition</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Myanmar's Exiled Journalists</p>
+              <p class="work-detail">Press freedom · Civil conflict · Information warfare</p>
+            </div>
+            <div class="work-date">May 2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Thailand and Cambodia Sanctions</p>
+              <p class="work-detail">ASEAN · Sanctions regimes · Regional governance</p>
+            </div>
+            <div class="work-date">May 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EUROPE -->
+      <div class="works-region">
+        <div class="region-label">Europe & Transatlantic</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">European Security at the Latest NATO Summit</p>
+              <p class="work-detail">NATO · European defence · Transatlantic relations</p>
+            </div>
+            <div class="work-date">June 2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Europe and the U.S. at the UN</p>
+              <p class="work-detail">UN Security Council · Transatlantic multilateralism · Diplomatic coordination</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">International Crisis Group EU Watchlist Entries</p>
+              <p class="work-detail">EU foreign policy · Crisis monitoring · Preventive diplomacy</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MENA & RED SEA -->
+      <div class="works-region">
+        <div class="region-label">MENA & Red Sea</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Houthi Attack Patterns — Red Sea Geospatial Mapping</p>
+              <p class="work-detail">Three geospatial mapping tools visualising maritime threats for UN Security Council and EU External Action Service policymakers</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Libya Sanctions at the UN</p>
+              <p class="work-detail">UN sanctions regime · Post-conflict governance · Security Council dynamics</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Syria's Sectarian Tensions</p>
+              <p class="work-detail">Post-Assad transition · Sectarian conflict · Regional spillover</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LATIN AMERICA -->
+      <div class="works-region">
+        <div class="region-label">Latin America</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Latin America Drug Trafficking — Crisis Group Map</p>
+              <p class="work-detail">Geospatial mapping · Organised crime · Trafficking routes</p>
+            </div>
+            <div class="work-date">2025</div>
+          </div>
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Washington's Threats to Decertify Colombia</p>
+              <p class="work-detail">U.S.-Colombia relations · Counternarcotics policy · Drug certification regimes</p>
+            </div>
+            <div class="work-date">June 2025</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AFRICA -->
+      <div class="works-region">
+        <div class="region-label">Africa & Sahel</div>
+        <div class="works-list">
+          <div class="work-item">
+            <div class="work-dot"></div>
+            <div class="work-content">
+              <p class="work-title">Central African Republic — Transhumance-Related Violence</p>
+              <p class="work-detail">Pastoral conflict · Intercommunal violence · Humanitarian access</p>
+            </div>
+            <div class="work-date">May 2025</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Cécile Carrel</p>
+        <p class="footer-sub">LSE MPP '26 · AI Governance · Policy Research</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
+        <a href="https://linkedin.com/in/cecilecarrel" target="_blank">LinkedIn</a>
+        <a href="https://github.com/cecilecarrel" target="_blank">GitHub</a>
+        <a href="index.html">← Portfolio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
