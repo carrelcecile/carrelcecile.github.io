@@ -8,389 +8,237 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body { overflow: hidden; }
+
+    .landing {
+      height: 100vh;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      position: relative;
+    }
+
+    /* LEFT — photo */
+    .landing-photo-col {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .landing-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: brightness(0.75) contrast(1.08);
+    }
+
+    .landing-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--navy-deep) 100%);
+    }
+
+    /* RIGHT — content */
+    .landing-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 72px 80px 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .landing-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+
+    .landing-name {
+      font-family: var(--font-display);
+      font-size: clamp(42px, 5vw, 64px);
+      font-weight: 300;
+      line-height: 1;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+
+    .landing-name em {
+      font-style: italic;
+      color: var(--text-muted);
+    }
+
+    .landing-bio {
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.3s forwards;
+    }
+
+    .landing-bio strong {
+      color: var(--text-primary);
+      font-weight: 400;
+    }
+
+    .landing-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.4s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--text-primary);
+      color: var(--navy-deep);
+      border: 1px solid var(--text-primary);
+    }
+    .btn-primary:hover {
+      background: var(--off-white);
+      border-color: var(--off-white);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-arrow {
+      font-size: 16px;
+      transition: transform 0.2s ease;
+    }
+    .btn:hover .btn-arrow { transform: translateX(4px); }
+
+    .landing-footer {
+      position: absolute;
+      bottom: 2rem;
+      right: 72px;
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.6s forwards;
+    }
+
+    .landing-footer a {
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+    .landing-footer a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      body { overflow: auto; }
+      .landing {
+        grid-template-columns: 1fr;
+        grid-template-rows: 45vh 1fr;
+        height: auto;
+        min-height: 100vh;
+      }
+      .landing-photo-col { height: 45vh; }
+      .landing-photo-overlay {
+        background: linear-gradient(to bottom, transparent 50%, var(--navy-deep) 100%);
+      }
+      .landing-content {
+        padding: 40px 2rem 100px;
+        justify-content: flex-start;
+      }
+      .landing-footer {
+        right: 2rem;
+        bottom: 1.5rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .landing-buttons { flex-direction: column; }
+      .btn { justify-content: space-between; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="#about" class="nav-name">Cécile Carrel</a>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#engineering">Engineering</a>
-      <a href="#research">Research</a>
-      <a href="mailto:c.j.carrel@lse.ac.uk" class="nav-cta">Contact ↗</a>
+  <div class="landing">
+
+    <!-- PHOTO -->
+    <div class="landing-photo-col">
+      <img src="professional_photo_blackandwhite.jpg" alt="Cécile Carrel" class="landing-photo" />
+      <div class="landing-photo-overlay"></div>
     </div>
-  </nav>
 
-  <!-- HERO -->
-  <section id="about" class="hero">
-    <div class="hero-grid">
+    <!-- CONTENT -->
+    <div class="landing-content">
 
-      <div class="hero-photo-col">
-        <div class="hero-photo-wrap">
-          <img src="professional_photo_blackandwhite.jpg" alt="Cécile Carrel" class="hero-photo" />
-        </div>
-        <div class="hero-photo-name">
-          <span class="hero-photo-firstname">Cécile</span>
-          <span class="hero-photo-lastname"><em>Carrel</em></span>
-        </div>
-      </div>
+      <p class="landing-eyebrow">London · LSE MPP '26</p>
 
-      <div class="hero-right">
-        <p class="hero-eyebrow">Policy · Engineering · International Security</p>
-        <p class="hero-bio">
-          AI engineer and policy researcher with production experience deploying 
-          optimisation systems at scale, and geopolitical analysis experience across 
-          the UN Security Council, EU External Action Service, and three Foreign Ministries. 
-          Currently completing an MPP at the London School of Economics specialising in 
-          AI governance and machine learning — combining technical systems design with 
-          evidence-based policymaking across international contexts.
-        </p>
-        <div class="hero-affiliations">
-          <span>LSE MPP '26</span>
-          <span class="sep">—</span>
-          <span>Amazon</span>
-          <span class="sep">—</span>
-          <span>International Crisis Group</span>
-          <span class="sep">—</span>
-          <span>UNICEF</span>
-          <span class="sep">—</span>
-          <span>WEF</span>
-          <span class="sep">—</span>
-          <span>Chatham House</span>
-        </div>
-        <div class="hero-ctas">
-          <a href="#engineering">Engineering ↓</a>
-          <a href="#research">Research ↓</a>
-          <a href="https://github.com/cecilecarrel" target="_blank" class="hero-cta-accent">GitHub ↗</a>
-          <a href="icg.html" class="hero-cta-accent">ICG Works ↗</a>
-        </div>
+      <h1 class="landing-name">Cécile<br><em>Carrel</em></h1>
+
+      <p class="landing-bio">
+        I build ML systems — and I've seen what happens when they go wrong at scale.
+        At Amazon, I deployed routing infrastructure across Spain's logistics network,
+        and then <strong>found and fixed the bias in it myself</strong>, triggering a 
+        Europe-wide audit. That experience is what drove me toward AI governance: 
+        not as a critic of technology, but as someone who understands it from the inside.<br><br>
+        I now work at the intersection of <strong>technical systems design and international 
+        policy</strong> — producing analysis for the UN Security Council, EU External Action 
+        Service, and Meta's Oversight Board, while completing an MPP at LSE specialising 
+        in AI governance and machine learning.
+      </p>
+
+      <div class="landing-buttons">
+        <a href="engineering.html" class="btn btn-primary">
+          Engineering Works <span class="btn-arrow">→</span>
+        </a>
+        <a href="research.html" class="btn btn-secondary">
+          Research & Policy <span class="btn-arrow">→</span>
+        </a>
       </div>
 
     </div>
-    <div class="hero-rule"></div>
-  </section>
 
-  <!-- ENGINEERING -->
-  <section id="engineering" class="section">
-    <div class="container">
-
-      <div class="section-header">
-        <div class="section-num">01</div>
-        <div class="section-header-text">
-          <h2>Engineering</h2>
-          <p>Production ML systems, NLP pipelines, geospatial tools, and IoT prototypes — built end-to-end with attention to fairness, auditability, and real-world deployment.</p>
-        </div>
-      </div>
-
-      <!-- ML / Production -->
-      <div class="subsection">
-        <div class="subsection-label">Machine Learning & Production Systems</div>
-        <div class="cards-grid">
-
-          <div class="card card--accent">
-            <div class="card-top">
-              <span class="card-org">Amazon · Spain · 2021–2023</span>
-              <span class="card-type">Production ML</span>
-            </div>
-            <h3>ML Routing & Fairness Audit</h3>
-            <p>Deployed ML routing systems across Spain's multi-modal logistics infrastructure (air, ground, maritime), improving national delivery speed by 25% and ETA accuracy by 5%. Integrated fairness constraints directly into linear programming objective functions, reducing manual overrides by 70%. Identified structural distributional disparities across 10 fulfilment centres through statistical bias analysis — triggering a Europe-wide fairness audit.</p>
-            <div class="card-tags">
-              <span>Linear programming</span><span>Fairness constraints</span><span>Statistical bias analysis</span><span>Python</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">Amazon · Hamburg · 2021</span>
-              <span class="card-type">Process Engineering</span>
-            </div>
-            <h3>Robotics Automation — $2.4M Savings</h3>
-            <p>Designed and implemented robotics-assisted automation workflows in Python and Matlab across Amazon's Hamburg site, reducing labour cycle time by 20% and improving forecast accuracy by 75%. Scaled workflows across 40 European sites, generating $2.4M in annual labour savings.</p>
-            <div class="card-tags">
-              <span>Python</span><span>Matlab</span><span>Robotics</span><span>Process optimisation</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">NLP · Python · AWS</span>
-              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
-            </div>
-            <h3>Policy Evidence Summariser</h3>
-            <p>Two-round map-reduce pipeline using AWS Bedrock to summarise large policy document corpora. Structured output layer for downstream analysis, with configurable summarisation depth per document chunk.</p>
-            <div class="card-tags">
-              <span>AWS Bedrock</span><span>Claude API</span><span>Map-reduce</span><span>Python</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">NLP · JavaScript · p5.js</span>
-              <a href="https://github.com/cecilecarrel/speechless" target="_blank" class="card-link">GitHub ↗</a>
-            </div>
-            <h3>Speechless — NLP Speech-to-Text</h3>
-            <p>Real-time speech-to-text system built in JavaScript using p5.js that captures spoken input and formats it into structured text output. Designed for hands-free note-taking in mobile or walking contexts.</p>
-            <div class="card-tags">
-              <span>NLP</span><span>p5.js</span><span>Speech recognition</span><span>JavaScript</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">LLM · Python</span>
-              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
-            </div>
-            <h3>Crossword Solver</h3>
-            <p>LLM-powered crossword solver with a two-round generation approach: first pass generates candidate answers per clue, second pass resolves conflicts across intersecting words. Includes a hint mode and auto-solve interface.</p>
-            <div class="card-tags">
-              <span>LLM</span><span>OpenAI SDK</span><span>Python</span><span>Prompt engineering</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">NLP · UX · BotSociety</span>
-              <span class="card-type">Team project</span>
-            </div>
-            <h3>Gorill.ia — Walk & Talk</h3>
-            <p>Mobile app concept promoting soft mobility at work. Core feature: real-time speech-to-text meeting tool with NLP-powered keyword formatting and synchronised shared notes — enabling collaborative walking meetings. Ethics analysis covered accent bias in STT datasets, overfitting mitigation, and data leakage risks for enterprise users.</p>
-            <div class="card-tags">
-              <span>NLP</span><span>Speech-to-text</span><span>UX design</span><span>Figma</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- IOT -->
-      <div class="subsection">
-        <div class="subsection-label">IoT & Embedded Systems</div>
-        <div class="cards-grid cards-grid--wide">
-
-          <div class="card card--iot">
-            <div class="card-top">
-              <span class="card-org">Hardware · Firmware · Cloud</span>
-              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
-            </div>
-            <h3>Smart Hotel Access & Housekeeping Tracker</h3>
-            <p>End-to-end IoT system replacing physical hotel keys with RFID cards connected via MQTT to a cloud dashboard. Room access events stream in real time; a Zapier–Google Calendar integration automatically dispatches housekeeping notifications. Cards can be deactivated remotely through the dashboard.</p>
-            <div class="iot-flow">
-              <span class="flow-node">RFID RC522</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-node">ESP32 Feather</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-node node-proto">MQTT / WiFi</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-node node-cloud">Adafruit.IO</span>
-              <span class="flow-arrow">→</span>
-              <span class="flow-node node-auto">Zapier → Calendar</span>
-            </div>
-            <div class="card-tags">
-              <span>Arduino C++</span><span>MQTT</span><span>SPI</span><span>Adafruit.IO</span><span>WiFi</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- DATA & DASHBOARDS -->
-      <div class="subsection">
-        <div class="subsection-label">Data, Geospatial & Dashboards</div>
-        <div class="cards-grid">
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">UNICEF · Eswatini · 2025</span>
-              <span class="card-type">Data Lead</span>
-            </div>
-            <h3>Maternal Health Dashboard — Eswatini</h3>
-            <p>Translated nationwide MICS maternal health survey data into actionable insights for the Eswatini government, identifying high-risk regions through time-series analysis. Built an interactive dashboard and geospatial mapping tool comparing results across all survey indicators — designed for government audiences requiring visual evidence for policy decisions.</p>
-            <div class="card-tags">
-              <span>GIS / Mapbox</span><span>Time-series</span><span>Tableau</span><span>Health policy</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">International Crisis Group · 2025</span>
-              <a href="icg.html" class="card-link">View works ↗</a>
-            </div>
-            <h3>Geospatial Conflict Mapping</h3>
-            <p>Developed three geospatial mapping tools visualising Houthi attack patterns in the Red Sea, providing situational awareness for senior policymakers and diplomatic audiences across the UN Security Council and EU External Action Service.</p>
-            <div class="card-tags">
-              <span>GIS</span><span>Conflict mapping</span><span>Geospatial analysis</span><span>Policymaker briefings</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-top">
-              <span class="card-org">World Economic Forum · 2023–2024</span>
-              <span class="card-type">Data Specialist</span>
-            </div>
-            <h3>WEF Engagement Analytics Dashboard</h3>
-            <p>Built the statistical foundation and taxonomic architecture for an engagement analytics dashboard covering WEF's full portfolio across government, civil society, and private sector partners. Developed time-series pipelines tracking trends across WEF's global stakeholder base and produced monthly insights reports for the Managing Board.</p>
-            <div class="card-tags">
-              <span>Power BI</span><span>Time-series</span><span>Taxonomy design</span><span>Executive reporting</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- COURSES -->
-      <div class="subsection">
-        <div class="subsection-label">Technical Skills & Training</div>
-        <div class="courses-row">
-          <div class="course">
-            <span class="course-name">Programming & ML</span>
-            <span class="course-detail">Python, C++, SQL, TensorFlow, OpenAI SDK, Reinforcement Learning (OpenAI Gym), Linear Programming</span>
-          </div>
-          <div class="course">
-            <span class="course-name">Cloud & Data</span>
-            <span class="course-detail">AWS Certified (Bedrock, Redshift), R, GIS (Mapbox), Tableau, Power BI</span>
-          </div>
-          <div class="course">
-            <span class="course-name">Methods</span>
-            <span class="course-detail">Regression, Time Series, Impact Evaluation, IV, DiD, RDD, Matching — LSE PP402</span>
-          </div>
-          <div class="course">
-            <span class="course-name">AI Governance</span>
-            <span class="course-detail">ML4Good AI Safety Governance Bootcamp · LSE Technology Policy</span>
-          </div>
-          <div class="course">
-            <span class="course-name">Delivery</span>
-            <span class="course-detail">Agile, Lean — Amazon TPM · Cross-functional team leadership</span>
-          </div>
-          <div class="course">
-            <span class="course-name">Languages</span>
-            <span class="course-detail">French (Native) · English (Fluent) · German (A2 Goethe Institut)</span>
-          </div>
-        </div>
-      </div>
-
+    <!-- FOOTER LINKS -->
+    <div class="landing-footer">
+      <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
+      <a href="https://linkedin.com/in/carrelcecile" target="_blank">LinkedIn</a>
+      <a href="https://github.com/carrelcecile" target="_blank">GitHub</a>
+      <a href="cecile_carrel_cv.pdf" target="_blank">CV ↓</a>
     </div>
-  </section>
 
-  <!-- RESEARCH -->
-  <section id="research" class="section section-alt">
-    <div class="container">
+  </div>
 
-      <div class="section-header">
-        <div class="section-num section-num--muted">02</div>
-        <div class="section-header-text">
-          <h2>Research</h2>
-          <p>From active conflict field research to AI governance policy — examining how technology reshapes power, security, and accountability at a global scale.</p>
-        </div>
-      </div>
-
-      <div class="research-list">
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">Meta Oversight Board</span>
-            <span class="research-year">Dec 2025 – Present</span>
-          </div>
-          <div class="research-body">
-            <h3>Open-Weight AI Model Regulation</h3>
-            <p>Commissioned by the Oversight Board to develop a policy proposal evaluating mandatory safety evaluation requirements for open-weight model releases — assessing which technical safeguards should be preserved or relaxed under different deployment conditions. Mapping the UK political and regulatory landscape to identify pathways for the OB to establish cross-industry jurisprudence. Research grounded in the ICCPR three-part test and UN Guiding Principles on Business and Human Rights.</p>
-            <div class="card-tags">
-              <span>Open-weight models</span><span>AI safety</span><span>UK regulatory landscape</span><span>ICCPR</span><span>Platform governance</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">Chatham House</span>
-            <span class="research-year">Sept 2025</span>
-          </div>
-          <div class="research-body">
-            <h3>Digital Identity Policy Framework</h3>
-            <p>Designed a policy framework for a UK government-backed digital identity system and presented recommendations to senior experts from the Alan Turing Institute, Tony Blair Institute, Chatham House, and Yoti. Framework addressed governance architecture, interoperability standards, and civil liberties safeguards.</p>
-            <div class="card-tags">
-              <span>Digital identity</span><span>UK government</span><span>Policy design</span><span>Data governance</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">International Crisis Group</span>
-            <span class="research-year">Jan – Sept 2025</span>
-          </div>
-          <div class="research-body">
-            <h3>Geopolitical Risk Research & Conflict Analysis</h3>
-            <p>Contributed to published geopolitical risk reports for the UN Security Council, EU External Action Service, and three Foreign Ministries, informing diplomatic strategy on regional stability. Work spanned the Indo-Pacific, Red Sea maritime security, European security architecture, Latin American drug trafficking, and the Sahel. Developed geospatial mapping tools visualising Houthi attack patterns in the Red Sea.</p>
-            <div class="card-tags">
-              <span>Conflict analysis</span><span>UN Security Council</span><span>EU External Action</span><span>Geospatial mapping</span><span>Field research</span>
-            </div>
-            <a href="icg.html" class="research-link">View published works ↗</a>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">LSE · MPP Research</span>
-            <span class="research-year">2025–26</span>
-          </div>
-          <div class="research-body">
-            <h3>Compute Governance & Strategic Dependencies</h3>
-            <p>Examining Europe's critical dependencies in AI compute infrastructure — semiconductor supply chains, export control regimes, and the geopolitics of AI capability. Developing a "managed interdependence" framework for EU-ASEAN coordination on compute governance.</p>
-            <div class="card-tags">
-              <span>Compute governance</span><span>Export controls</span><span>EU-ASEAN</span><span>Strategic dependencies</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">LSE · Policy Paper</span>
-            <span class="research-year">2025</span>
-          </div>
-          <div class="research-body">
-            <h3>Building Durable AI Capability in UK Government</h3>
-            <p>Transformation design brief examining the UK government's structural failure to build institutional AI expertise. Applied Moore's strategic triangle, Roberts' complementarity theory, and digital-era governance frameworks to design a sustainable capability model.</p>
-            <div class="card-tags">
-              <span>AI policy</span><span>UK government</span><span>Digital transformation</span><span>Institutional design</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="research-item">
-          <div class="research-meta">
-            <span class="research-org">LSE · Geopolitics of Technology</span>
-            <span class="research-year">Ongoing</span>
-          </div>
-          <div class="research-body">
-            <h3>Technology, Conflict & ASEAN Diplomacy</h3>
-            <p>Research spanning autonomous weapons systems, ASEAN non-interference norms, and technology's role in the China-Taiwan security dynamic. Organised panels on autonomous weapons, ASEAN diplomacy, and technology in conflict as Grimshaw Speaker Officer at LSE. Led on-site coordination of ASEAN heads of state engagement at Davos as WEF Data Specialist.</p>
-            <div class="card-tags">
-              <span>Autonomous weapons</span><span>ASEAN</span><span>China-Taiwan</span><span>Digital conflict</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <p class="footer-name">Cécile Carrel</p>
-        <p class="footer-sub">LSE MPP '26 · AI Governance · Policy Research</p>
-      </div>
-      <div class="footer-links">
-        <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
-        <a href="https://linkedin.com/in/cecilecarrel" target="_blank">LinkedIn</a>
-        <a href="https://github.com/cecilecarrel" target="_blank">GitHub</a>
-        <a href="icg.html">ICG Works</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>

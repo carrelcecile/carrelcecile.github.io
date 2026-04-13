@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering — Cécile Carrel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-name">Cécile Carrel</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="engineering.html" class="nav-active">Engineering</a>
+      <a href="research.html">Research</a>
+      <a href="mailto:c.j.carrel@lse.ac.uk" class="nav-cta">Contact ↗</a>
+    </div>
+  </nav>
+
+  <div class="page-hero">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back</a>
+      <div class="page-hero-grid">
+        <div class="section-num">01</div>
+        <div>
+          <h1 class="page-title">Engineering</h1>
+          <p class="page-subtitle">Production ML systems, NLP pipelines, geospatial tools, and IoT prototypes — built with attention to fairness, auditability, and real-world deployment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="container">
+
+      <!-- PRODUCTION ML -->
+      <div class="subsection">
+        <div class="subsection-label">Production ML & Systems</div>
+        <div class="cards-grid">
+
+          <div class="card card--accent">
+            <div class="card-top">
+              <span class="card-org">Amazon · Spain · 2021–2023</span>
+              <span class="card-type">Production ML</span>
+            </div>
+            <h3>ML Routing & Fairness Audit</h3>
+            <p>Deployed ML routing systems across Spain's multi-modal logistics infrastructure (air, ground, maritime), improving national delivery speed by 25% and ETA accuracy by 5%. Integrated fairness constraints into linear programming objective functions, reducing manual overrides by 70%. Identified structural distributional disparities across 10 fulfilment centres — triggering a Europe-wide fairness audit.</p>
+            <div class="card-tags">
+              <span>Linear programming</span><span>Fairness constraints</span><span>Statistical bias analysis</span><span>Python</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">Amazon · Hamburg · 2021</span>
+              <span class="card-type">Robotics</span>
+            </div>
+            <h3>Robotics Automation — $2.4M Savings</h3>
+            <p>Designed and implemented robotics-assisted automation workflows in Python and Matlab, reducing labour cycle time by 20% and improving forecast accuracy by 75%. Scaled across 40 European sites, generating $2.4M in annual labour savings.</p>
+            <div class="card-tags">
+              <span>Python</span><span>Matlab</span><span>Robotics</span><span>Process optimisation</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- NLP -->
+      <div class="subsection">
+        <div class="subsection-label">NLP & Language Models</div>
+        <div class="cards-grid">
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · Python · AWS</span>
+              <a href="https://github.com/carrelcecile/policymakers-ai-tool" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Policymakers AI Tool</h3>
+            <p>AI-powered tool designed for policy professionals to query, summarise, and extract structured insights from large document sets. Built to bridge the gap between technical AI outputs and policy-facing decision making.</p>
+            <div class="card-tags">
+              <span>Python</span><span>LLM</span><span>Policy analysis</span><span>AWS</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · Python · AWS Bedrock</span>
+              <a href="https://github.com/carrelcecile" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Policy Evidence Summariser</h3>
+            <p>Two-round map-reduce pipeline using AWS Bedrock to summarise large policy document corpora. Configurable summarisation depth per document chunk with structured output layer for downstream analysis.</p>
+            <div class="card-tags">
+              <span>AWS Bedrock</span><span>Claude API</span><span>Map-reduce</span><span>Python</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · JavaScript · p5.js</span>
+              <a href="https://github.com/cecilecarrel/speechless" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Speechless — NLP Speech-to-Text</h3>
+            <p>Real-time speech-to-text system built in JavaScript using p5.js. Captures spoken input and formats it into structured text output — designed for hands-free note-taking in mobile or walking contexts.</p>
+            <div class="card-tags">
+              <span>NLP</span><span>p5.js</span><span>Speech recognition</span><span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">LLM · Python</span>
+              <a href="https://github.com/carrelcecile" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Crossword Solver</h3>
+            <p>LLM-powered solver with a two-round generation approach: first pass generates candidate answers per clue, second pass resolves conflicts across intersecting words. Includes hint mode and auto-solve interface.</p>
+            <div class="card-tags">
+              <span>LLM</span><span>OpenAI SDK</span><span>Python</span><span>Prompt engineering</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RL -->
+      <div class="subsection">
+        <div class="subsection-label">Reinforcement Learning</div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">RL · Python · OpenAI Gym</span>
+              <a href="https://github.com/carrelcecile/reinforcementlearning" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Reinforcement Learning Projects</h3>
+            <p>Implementations and experiments in reinforcement learning using OpenAI Gym. Covers policy gradient methods, Q-learning, and environment design for decision-making under uncertainty.</p>
+            <div class="card-tags">
+              <span>Python</span><span>OpenAI Gym</span><span>Policy gradients</span><span>Q-learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATA & DASHBOARDS -->
+      <div class="subsection">
+        <div class="subsection-label">Data, Geospatial & Dashboards</div>
+        <div class="cards-grid">
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">UNICEF · Eswatini · 2025</span>
+              <span class="card-type">Data Lead</span>
+            </div>
+            <h3>Maternal Health Dashboard — Eswatini</h3>
+            <p>Translated nationwide MICS maternal health survey data into actionable insights for the Eswatini government, identifying high-risk regions through time-series analysis. Built an interactive dashboard and geospatial mapping tool across all survey indicators.</p>
+            <div class="card-tags">
+              <span>GIS / Mapbox</span><span>Time-series</span><span>Tableau</span><span>Health policy</span>
+            </div>
+            <p class="card-contact">Contact me if interested in this project →</p>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">International Crisis Group · 2025</span>
+              <a href="icg.html" class="card-link">View works ↗</a>
+            </div>
+            <h3>Red Sea Conflict Geospatial Mapping</h3>
+            <p>Developed three geospatial mapping tools visualising Houthi attack patterns in the Red Sea, providing situational awareness for senior policymakers across the UN Security Council and EU External Action Service.</p>
+            <div class="card-tags">
+              <span>GIS</span><span>Conflict mapping</span><span>Geospatial analysis</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">World Economic Forum · 2023–24</span>
+              <span class="card-type">Data Specialist</span>
+            </div>
+            <h3>WEF Engagement Analytics Dashboard</h3>
+            <p>Built the statistical foundation and taxonomic architecture for an engagement analytics dashboard covering WEF's full portfolio across government, civil society, and private sector partners. Produced monthly insights reports for the Managing Board.</p>
+            <div class="card-tags">
+              <span>Power BI</span><span>Time-series</span><span>Taxonomy design</span>
+            </div>
+            <p class="card-contact">Contact me if interested in this project →</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- IOT -->
+      <div class="subsection">
+        <div class="subsection-label">IoT & Embedded Systems</div>
+        <div class="cards-grid cards-grid--wide">
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">Hardware · Firmware · Cloud</span>
+              <a href="https://github.com/carrelcecile" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Smart Hotel Access & Housekeeping Tracker</h3>
+            <p>End-to-end IoT system replacing physical hotel keys with RFID cards connected via MQTT to a cloud dashboard. Room access events stream in real time; a Zapier–Google Calendar integration automatically dispatches housekeeping notifications. Cards can be deactivated remotely through the dashboard.</p>
+            <div class="iot-flow">
+              <span class="flow-node">RFID RC522</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node">ESP32 Feather</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-proto">MQTT / WiFi</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-cloud">Adafruit.IO</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-auto">Zapier → Calendar</span>
+            </div>
+            <div class="card-tags">
+              <span>Arduino C++</span><span>MQTT</span><span>SPI</span><span>Adafruit.IO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- APP DESIGN -->
+      <div class="subsection">
+        <div class="subsection-label">App Design & Prototyping</div>
+        <div class="cards-grid">
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · UX · BotSociety</span>
+              <span class="card-type">Team project</span>
+            </div>
+            <h3>Gorill.ia — Walk & Talk</h3>
+            <p>Mobile app concept promoting soft mobility at work. Real-time speech-to-text meeting tool with NLP-powered keyword formatting and synchronised shared notes — enabling collaborative walking meetings. Ethics analysis covered accent bias, overfitting mitigation, and data leakage risks for enterprise users.</p>
+            <div class="card-tags">
+              <span>NLP</span><span>Speech-to-text</span><span>UX design</span><span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="subsection">
+        <div class="subsection-label">Technical Skills</div>
+        <div class="courses-row">
+          <div class="course">
+            <span class="course-name">Programming & ML</span>
+            <span class="course-detail">Python, C++, SQL, TensorFlow, OpenAI SDK, RL (OpenAI Gym), Linear Programming</span>
+          </div>
+          <div class="course">
+            <span class="course-name">Cloud & Infrastructure</span>
+            <span class="course-detail">AWS Certified (Bedrock, Redshift), Docker, REST APIs</span>
+          </div>
+          <div class="course">
+            <span class="course-name">Data & Geospatial</span>
+            <span class="course-detail">R, GIS (Mapbox), Tableau, Power BI, Time-series analysis</span>
+          </div>
+          <div class="course">
+            <span class="course-name">Methods</span>
+            <span class="course-detail">Regression, IV, DiD, RDD, Matching, Impact Evaluation</span>
+          </div>
+          <div class="course">
+            <span class="course-name">Delivery</span>
+            <span class="course-detail">Agile, Lean · Amazon TPM · Cross-functional leadership</span>
+          </div>
+          <div class="course">
+            <span class="course-name">Languages</span>
+            <span class="course-detail">French (Native) · English (Fluent) · German (A2)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Cécile Carrel</p>
+        <p class="footer-sub">LSE MPP '26 · AI Governance · Engineering</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
+        <a href="https://github.com/carrelcecile" target="_blank">GitHub</a>
+        <a href="cecile_carrel_cv.pdf" target="_blank">CV ↓</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
