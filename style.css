@@ -178,11 +178,11 @@ a { color: inherit; text-decoration: none; }
 
 .card--accent {
   border-color: var(--gold-border);
-  background: rgba(196,169,125,0.05);
+  background: rgba(94,158,126,0.05);
 }
 .card--accent:hover {
   border-color: var(--gold);
-  background: rgba(196,169,125,0.08);
+  background: rgba(94,158,126,0.08);
 }
 
 .card-top {
@@ -251,7 +251,7 @@ a { color: inherit; text-decoration: none; }
 }
 .flow-node.node-proto { background: rgba(77,184,154,0.1); border-color: rgba(77,184,154,0.2); color: #4db89a; }
 .flow-node.node-cloud { background: rgba(100,140,220,0.1); border-color: rgba(100,140,220,0.2); color: #6a9fdc; }
-.flow-node.node-auto  { background: rgba(196,169,125,0.1); border-color: var(--gold-border); color: var(--gold); }
+.flow-node.node-auto  { background: rgba(94,158,126,0.1); border-color: var(--gold-border); color: var(--gold); }
 .flow-arrow { color: rgba(255,255,255,0.2); font-size: 12px; }
 
 /* ===========================
