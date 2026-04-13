@@ -256,13 +256,13 @@
       <div class="works-region">
         <div class="region-label">Indo-Pacific & Asia</div>
         <div class="works-list">
-          <div class="work-item">
+          <div class="work-item work-item--clickable" onclick="openModal()">
             <div class="work-dot"></div>
             <div class="work-content">
               <p class="work-title">The Philippines and Asia's Militarisation</p>
               <p class="work-detail">Regional security architecture · Defence posture · US-Philippines alliance</p>
             </div>
-            <div class="work-date">2025</div>
+            <div class="work-date">2025 <span class="work-read">Read ↗</span></div>
           </div>
           <div class="work-item">
             <div class="work-dot"></div>
@@ -409,6 +409,128 @@
       </div>
     </div>
   </footer>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-tag">ICG Research · 2025</div>
+      <h2 class="modal-title">The Philippines and Asia's Militarisation</h2>
+      <div class="modal-divider"></div>
+      <div class="modal-body">
+        <p>The Philippines is at a strategic inflection point. Sitting at the fulcrum of Asian geopolitics, its military is shifting from domestic-focused security challenges to growing external conflict risks.</p>
+        <p>China is becoming more assertive in the South China Sea. It is expanding its territorial claims, inhibiting access to its own Exclusive Economic Zone, and creating friction with the U.S.</p>
+        <p>Located between the South China Sea and the Pacific Ocean, the Philippines' threat perceptions have spiked. In response, it is accelerating efforts to modernise its military and cultivate its security partnerships with Washington and others. It is also expanding ties with other countries to draw even with more militarily advanced neighbours and hedge against scenarios in which the White House downgrades its commitment to its Asian allies.</p>
+        <p>Come what may, Manila wants greater deterrent and defensive capabilities to help discourage Chinese expansionism in the South China Sea. But balancing deterrence with diplomacy is key. Increasingly dangerous confrontations at sea risk more strategic distrust and even armed conflict.</p>
+        <p>Ensuring good communications with Beijing is vital, including by strengthening crisis channels to help manage escalatory risks when incidents occur.</p>
+      </div>
+      <div class="modal-source">Source: International Crisis Group Research · 2025</div>
+    </div>
+  </div>
+
+  <style>
+    .work-item--clickable { cursor: pointer; }
+    .work-item--clickable:hover .work-read { opacity: 1; }
+    .work-read {
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-left: 6px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(4, 8, 18, 0.88);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: #111f3a;
+      border: 1px solid rgba(94,158,126,0.25);
+      border-radius: 4px;
+      padding: 40px 44px;
+      max-width: 640px;
+      width: 100%;
+      position: relative;
+      max-height: 85vh;
+      overflow-y: auto;
+      animation: modalIn 0.25s ease;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-close {
+      position: absolute; top: 18px; right: 20px;
+      background: none; border: none;
+      font-size: 14px; color: rgba(224,218,208,0.35);
+      cursor: pointer; transition: color 0.2s ease;
+      font-family: var(--font-body);
+    }
+    .modal-close:hover { color: var(--text-primary); }
+
+    .modal-tag {
+      font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #5e9e7e; margin-bottom: 14px;
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 28px; font-weight: 400; line-height: 1.15;
+      color: #f0eee8; margin-bottom: 20px;
+    }
+
+    .modal-divider {
+      height: 1px; background: rgba(255,255,255,0.08);
+      margin-bottom: 22px;
+    }
+
+    .modal-body { display: flex; flex-direction: column; gap: 14px; }
+
+    .modal-body p {
+      font-size: 14px; line-height: 1.85;
+      color: rgba(224,218,208,0.7);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-weight: 300;
+    }
+
+    .modal-source {
+      margin-top: 24px;
+      font-size: 11px; letter-spacing: 0.06em;
+      color: rgba(224,218,208,0.25);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 16px;
+      font-family: 'DM Sans', system-ui, sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .modal-box { padding: 28px 24px; }
+      .modal-title { font-size: 22px; }
+    }
+  </style>
+
+  <script>
+    function openModal() {
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(e) {
+      if (!e || e.target === document.getElementById('modal') || e.currentTarget.classList.contains('modal-close')) {
+        document.getElementById('modal').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
 
   <script src="script.js"></script>
 </body>
