@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cécile Carrel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#about" class="nav-name">Cécile Carrel</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#research">Research</a>
+      <a href="mailto:your@email.com" class="nav-cta">Contact ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="about" class="hero">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <p class="hero-eyebrow">Policy · Engineering · International Security</p>
+        <h1 class="hero-name">Cécile<br><em>Carrel</em></h1>
+      </div>
+      <div class="hero-right">
+        <p class="hero-bio">
+          I work at the intersection of AI governance, international security, 
+          and applied machine learning. Currently completing an MPP at the 
+          London School of Economics specialising in digital policy — with 
+          prior experience building and auditing ML systems at Amazon, 
+          conducting conflict field research for the International Crisis Group, 
+          and developing data infrastructure at UNICEF and the World Economic Forum.
+        </p>
+        <div class="hero-affiliations">
+          <span>LSE MPP '26</span>
+          <span class="sep">—</span>
+          <span>Amazon TPM</span>
+          <span class="sep">—</span>
+          <span>International Crisis Group</span>
+          <span class="sep">—</span>
+          <span>UNICEF</span>
+          <span class="sep">—</span>
+          <span>WEF</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#engineering">Engineering work ↓</a>
+          <a href="#research">Research ↓</a>
+          <a href="https://github.com/cecilecarrel" target="_blank" class="hero-cta-accent">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-rule"></div>
+  </section>
+
+  <!-- ENGINEERING -->
+  <section id="engineering" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-num">01</div>
+        <div class="section-header-text">
+          <h2>Engineering</h2>
+          <p>ML systems, NLP pipelines, IoT prototypes — built end-to-end with attention to fairness, auditability, and real-world deployment.</p>
+        </div>
+      </div>
+
+      <!-- ML / NLP -->
+      <div class="subsection">
+        <div class="subsection-label">Machine Learning & NLP</div>
+        <div class="cards-grid">
+
+          <div class="card card--accent">
+            <div class="card-top">
+              <span class="card-org">Amazon · Production</span>
+              <span class="card-type">ML Fairness Audit</span>
+            </div>
+            <h3>Distributional Bias Discovery</h3>
+            <p>Identified distributional bias in a production ML routing system systematically deprioritising lower-income postcodes. Fixed the objective function using fairness constraints and triggered a Europe-wide audit of the deployed model.</p>
+            <div class="card-tags">
+              <span>Production ML</span><span>Fairness constraints</span><span>Algorithmic audit</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · Python</span>
+              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Policy Evidence Summariser</h3>
+            <p>Two-round map-reduce pipeline using AWS Bedrock to summarise large policy document corpora. Structured output layer for downstream analysis, with configurable summarisation depth per document chunk.</p>
+            <div class="card-tags">
+              <span>AWS Bedrock</span><span>Claude API</span><span>Map-reduce</span><span>Python</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · JavaScript · p5.js</span>
+              <a href="https://github.com/cecilecarrel/speechless" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Speechless — NLP Meeting Summariser</h3>
+            <p>Real-time speech-to-text system built in JavaScript using p5.js that captures spoken input and formats it into structured text output. Designed for hands-free note-taking in mobile or walking contexts.</p>
+            <div class="card-tags">
+              <span>NLP</span><span>p5.js</span><span>Speech-to-text</span><span>JavaScript</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">LLM · Python</span>
+              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Crossword Solver</h3>
+            <p>LLM-powered crossword solver with a two-round generation approach: first pass generates candidate answers per clue, second pass resolves conflicts across intersecting words. Includes a hint mode and auto-solve interface.</p>
+            <div class="card-tags">
+              <span>LLM</span><span>OpenAI SDK</span><span>Python</span><span>Prompt engineering</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- IOT -->
+      <div class="subsection">
+        <div class="subsection-label">IoT & Embedded Systems</div>
+        <div class="cards-grid cards-grid--wide">
+
+          <div class="card card--iot">
+            <div class="card-top">
+              <span class="card-org">Hardware · Firmware · Cloud</span>
+              <a href="https://github.com/cecilecarrel" target="_blank" class="card-link">GitHub ↗</a>
+            </div>
+            <h3>Smart Hotel Access & Housekeeping Tracker</h3>
+            <p>End-to-end IoT system replacing physical hotel keys with RFID cards connected via MQTT to a cloud dashboard. Room access events stream in real time; a Zapier–Google Calendar integration automatically dispatches housekeeping notifications by email and push. Cards can be deactivated remotely through the dashboard.</p>
+            <div class="iot-flow">
+              <span class="flow-node">RFID RC522</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node">ESP32 Feather</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-proto">MQTT / WiFi</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-cloud">Adafruit.IO</span>
+              <span class="flow-arrow">→</span>
+              <span class="flow-node node-auto">Zapier → Calendar</span>
+            </div>
+            <div class="card-tags">
+              <span>Arduino C++</span><span>MQTT</span><span>SPI</span><span>Adafruit.IO</span><span>WiFi</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- APP / DESIGN -->
+      <div class="subsection">
+        <div class="subsection-label">App Design & Prototyping</div>
+        <div class="cards-grid">
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">NLP · UX · BotSociety</span>
+              <span class="card-type">Team project</span>
+            </div>
+            <h3>Gorill.ia — Walk & Talk</h3>
+            <p>Mobile app concept promoting soft mobility at work. Core feature: a real-time speech-to-text meeting tool with NLP-powered keyword formatting and synchronised shared notes — enabling collaborative walking meetings. Ethics analysis covered accent bias in STT datasets, overfitting mitigation, and data leakage risks for enterprise users.</p>
+            <div class="card-tags">
+              <span>NLP</span><span>Speech-to-text</span><span>UX design</span><span>Figma</span><span>BotSociety</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">UNICEF</span>
+              <span class="card-type">Data & Dashboards</span>
+            </div>
+            <h3>UNICEF Programme Dashboard</h3>
+            <p>Designed and built programme monitoring dashboards for UNICEF. <!-- Add: what it tracked, tools used (Tableau, Power BI, etc.), and the outcome --></p>
+            <div class="card-tags">
+              <span>Data visualisation</span><span>Programme monitoring</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-top">
+              <span class="card-org">World Economic Forum</span>
+              <span class="card-type">Analytics</span>
+            </div>
+            <h3>WEF Analytics Dashboard</h3>
+            <p>Contributed to analytics and data infrastructure at the World Economic Forum. <!-- Add: tools, scope, what it was used for --></p>
+            <div class="card-tags">
+              <span>Analytics</span><span>Data infrastructure</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COURSES -->
+      <div class="subsection">
+        <div class="subsection-label">Technical Training</div>
+        <div class="courses-row">
+          <div class="course"><span class="course-name">LLMs & Foundation Models</span><span class="course-detail">Transformers, fine-tuning, RAG, prompt engineering</span></div>
+          <div class="course"><span class="course-name">AWS Cloud</span><span class="course-detail">Bedrock, Lambda, S3, IAM</span></div>
+          <div class="course"><span class="course-name">Econometrics</span><span class="course-detail">IV, DiD, RDD, matching — LSE PP402</span></div>
+          <div class="course"><span class="course-name">Python for Data Science</span><span class="course-detail">Pandas, NumPy, scikit-learn</span></div>
+          <div class="course"><span class="course-name">Embedded Systems & IoT</span><span class="course-detail">Arduino, MQTT, SPI, WiFi</span></div>
+          <div class="course"><span class="course-name">NLP & Speech Processing</span><span class="course-detail">p5.js, speech recognition APIs, JS</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="section section-alt">
+    <div class="container">
+
+      <div class="section-header">
+        <div class="section-num section-num--muted">02</div>
+        <div class="section-header-text">
+          <h2>Research</h2>
+          <p>From active conflict field research to AI governance policy — examining how technology reshapes power, security, and accountability.</p>
+        </div>
+      </div>
+
+      <div class="research-list">
+
+        <div class="research-item">
+          <div class="research-meta">
+            <span class="research-org">Meta Oversight Board</span>
+            <span class="research-year">2025</span>
+          </div>
+          <div class="research-body">
+            <h3>AI-Generated Content & Violent Extremism</h3>
+            <p>Research examining how AI-generated content intersects with dangerous organisations and violent extremism policy. Central argument: the core governance challenge is <em>unverifiable compliance</em> — the gap between what platforms claim their systems do and what they actually do under adversarial conditions.</p>
+            <div class="card-tags">
+              <span>Content moderation</span><span>AI governance</span><span>Platform accountability</span><span>DSA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-item">
+          <div class="research-meta">
+            <span class="research-org">LSE · MPP Research</span>
+            <span class="research-year">2025–26</span>
+          </div>
+          <div class="research-body">
+            <h3>Compute Governance & Strategic Dependencies</h3>
+            <p>Examining Europe's critical dependencies in AI compute infrastructure — semiconductor supply chains, export control regimes, and the geopolitics of AI capability. Developing a "managed interdependence" framework for EU-ASEAN coordination on compute governance.</p>
+            <div class="card-tags">
+              <span>Compute governance</span><span>Export controls</span><span>EU-ASEAN</span><span>Strategic dependencies</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-item">
+          <div class="research-meta">
+            <span class="research-org">International Crisis Group</span>
+            <span class="research-year">2023–24</span>
+          </div>
+          <div class="research-body">
+            <h3>Conflict Analysis & Field Research</h3>
+            <p>Conducted research on active conflict dynamics for ICG's global monitoring programme. Qualitative field methods, source triangulation, and policy-facing analysis for governments and international institutions. Work spanned hybrid warfare, crisis diplomacy, and regional security architecture.</p>
+            <div class="card-tags">
+              <span>Conflict analysis</span><span>Field research</span><span>Crisis diplomacy</span><span>Hybrid warfare</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-item">
+          <div class="research-meta">
+            <span class="research-org">LSE · Policy Paper</span>
+            <span class="research-year">2025</span>
+          </div>
+          <div class="research-body">
+            <h3>Building Durable AI Capability in UK Government</h3>
+            <p>Transformation design brief on UK government's failure to build institutional AI expertise. Applied Moore's strategic triangle, Roberts' complementarity theory, and digital-era governance frameworks to design a sustainable capability model.</p>
+            <div class="card-tags">
+              <span>AI policy</span><span>UK government</span><span>Digital transformation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="research-item">
+          <div class="research-meta">
+            <span class="research-org">LSE · Geopolitics of Technology</span>
+            <span class="research-year">Ongoing</span>
+          </div>
+          <div class="research-body">
+            <h3>Technology, Conflict & ASEAN Diplomacy</h3>
+            <p>Research spanning autonomous weapons systems, ASEAN non-interference norms, and technology's role in the China-Taiwan security dynamic. Organised panels on autonomous weapons, ASEAN diplomacy, and technology in conflict as Grimshaw Speaker Officer at LSE.</p>
+            <div class="card-tags">
+              <span>Autonomous weapons</span><span>ASEAN</span><span>China-Taiwan</span><span>Digital conflict</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Cécile Carrel</p>
+        <p class="footer-sub">LSE MPP '26 · AI Governance · Policy Research</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:your@email.com">Email</a>
+        <a href="https://linkedin.com/in/cecilecarrel" target="_blank">LinkedIn</a>
+        <a href="https://github.com/cecilecarrel" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
