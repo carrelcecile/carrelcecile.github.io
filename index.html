@@ -7,112 +7,169 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
   <style>
-    body { overflow: hidden; }
-
-    .landing {
-      height: 100vh;
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      position: relative;
+    /* ─── TOKENS ─── */
+    :root {
+      --navy-deep:   #0d1117;
+      --navy-mid:    #141b26;
+      --gold:        #b8985a;
+      --gold-faint:  rgba(184,152,90,0.15);
+      --text-primary:   #e8e2d9;
+      --text-secondary: rgba(232,226,217,0.62);
+      --text-muted:     rgba(232,226,217,0.38);
+      --rule:           rgba(232,226,217,0.10);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
     }
 
-    /* LEFT — photo */
-    .landing-photo-col {
-      position: relative;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy-deep);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-weight: 300;
+      min-height: 100vh;
+      /* subtle grain */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── LAYOUT ─── */
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 2rem 80px;
+    }
+
+    /* ─── CARD ─── */
+    .card {
+      width: 100%;
+      max-width: 680px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    /* ─── HEADER ROW ─── */
+    .header-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 36px;
+      margin-bottom: 3rem;
+      width: 100%;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    .portrait-wrap {
+      flex-shrink: 0;
+      width: 108px;
+      height: 108px;
+      border-radius: 2px;
       overflow: hidden;
+      position: relative;
+      /* thin gold border */
+      outline: 1px solid rgba(184,152,90,0.30);
+      outline-offset: 3px;
     }
 
-    .landing-photo {
+    .portrait-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
       display: block;
-      filter: brightness(0.75) contrast(1.08);
+      filter: brightness(0.80) contrast(1.06) grayscale(0.15);
     }
 
-    .landing-photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 60%, var(--navy-deep) 100%);
-    }
-
-    /* RIGHT — content */
-    .landing-content {
+    .header-text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 80px 72px 80px 56px;
-      position: relative;
-      z-index: 1;
+      gap: 6px;
+      padding-bottom: 4px;
     }
 
-    .landing-eyebrow {
+    .eyebrow {
       font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.1s forwards;
     }
 
-    .landing-name {
+    .name {
       font-family: var(--font-display);
-      font-size: clamp(42px, 5vw, 64px);
+      font-size: clamp(38px, 6vw, 58px);
       font-weight: 300;
       line-height: 1;
-      color: var(--text-primary);
       letter-spacing: -0.01em;
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.2s forwards;
+      color: var(--text-primary);
     }
 
-    .landing-name em {
+    .name em {
       font-style: italic;
       color: var(--text-muted);
     }
 
-    .landing-bio {
-      font-size: 15px;
-      line-height: 1.9;
-      color: var(--text-secondary);
-      max-width: 520px;
-      margin-bottom: 3rem;
+    /* ─── DIVIDER ─── */
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: var(--rule);
+      margin-bottom: 2rem;
       opacity: 0;
-      animation: fadeUp 0.6s ease 0.3s forwards;
+      animation: fadeUp 0.7s ease 0.25s forwards;
     }
 
-    .landing-bio strong {
+    /* ─── BIO ─── */
+    .bio {
+      font-size: 14.5px;
+      line-height: 1.95;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.35s forwards;
+    }
+
+    .bio strong {
       color: var(--text-primary);
       font-weight: 400;
     }
 
-    .landing-buttons {
+    .bio p + p { margin-top: 1em; }
+
+    /* ─── BUTTONS ─── */
+    .buttons {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
+      margin-bottom: 3rem;
       opacity: 0;
-      animation: fadeUp 0.6s ease 0.4s forwards;
+      animation: fadeUp 0.7s ease 0.45s forwards;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 14px 28px;
+      padding: 12px 26px;
       font-family: var(--font-body);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 400;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       border-radius: 2px;
       transition: all 0.2s ease;
       cursor: pointer;
-      text-decoration: none;
     }
 
     .btn-primary {
@@ -121,124 +178,138 @@
       border: 1px solid var(--text-primary);
     }
     .btn-primary:hover {
-      background: var(--off-white);
-      border-color: var(--off-white);
+      background: #fff;
+      border-color: #fff;
     }
 
     .btn-secondary {
       background: transparent;
       color: var(--text-primary);
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--rule);
     }
     .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.5);
-      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.03);
     }
 
-    .btn-arrow {
-      font-size: 16px;
-      transition: transform 0.2s ease;
-    }
+    .btn-arrow { font-size: 15px; transition: transform 0.2s ease; }
     .btn:hover .btn-arrow { transform: translateX(4px); }
 
-    .landing-footer {
-      position: absolute;
-      bottom: 2rem;
-      right: 72px;
+    /* ─── FOOTER LINKS ─── */
+    .footer-links {
       display: flex;
-      gap: 1.75rem;
+      gap: 1.5rem;
       align-items: center;
       opacity: 0;
-      animation: fadeUp 0.6s ease 0.6s forwards;
+      animation: fadeUp 0.7s ease 0.55s forwards;
     }
 
-    .landing-footer a {
+    .footer-links a {
       font-size: 11px;
       letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--text-muted);
       transition: color 0.2s ease;
-    }
-    .landing-footer a:hover { color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      body { overflow: auto; }
-      .landing {
-        grid-template-columns: 1fr;
-        grid-template-rows: 45vh 1fr;
-        height: auto;
-        min-height: 100vh;
-      }
-      .landing-photo-col { height: 45vh; }
-      .landing-photo-overlay {
-        background: linear-gradient(to bottom, transparent 50%, var(--navy-deep) 100%);
-      }
-      .landing-content {
-        padding: 40px 2rem 100px;
-        justify-content: flex-start;
-      }
-      .landing-footer {
-        right: 2rem;
-        bottom: 1.5rem;
-      }
+      position: relative;
     }
 
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+    .footer-links a:hover::after { transform: scaleX(1); }
+
+    .footer-sep {
+      width: 1px;
+      height: 14px;
+      background: var(--rule);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 540px) {
-      .landing-buttons { flex-direction: column; }
+      .header-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .portrait-wrap { width: 80px; height: 80px; }
+      .buttons { flex-direction: column; }
       .btn { justify-content: space-between; }
+      .footer-links { flex-wrap: wrap; gap: 1rem; }
+      .footer-sep { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="landing">
+  <div class="page">
+    <div class="card">
 
-    <!-- PHOTO -->
-    <div class="landing-photo-col">
-      <img src="professional_photo_blackandwhite.jpg" alt="Cécile Carrel" class="landing-photo" />
-      <div class="landing-photo-overlay"></div>
-    </div>
+      <!-- HEADER: photo + name side by side -->
+      <div class="header-row">
+        <div class="portrait-wrap">
+          <img src="professional_photo_blackandwhite.jpg" alt="Cécile Carrel" />
+        </div>
+        <div class="header-text">
+          <span class="eyebrow">London · LSE MPP '26</span>
+          <h1 class="name">Cécile<br><em>Carrel</em></h1>
+        </div>
+      </div>
 
-    <!-- CONTENT -->
-    <div class="landing-content">
+      <div class="rule"></div>
 
-      <p class="landing-eyebrow">London · LSE MPP '26</p>
+      <!-- BIO -->
+      <div class="bio">
+        <p>
+          Background in engineering and technical programme management at
+          <strong>Amazon</strong>, including large-scale ML systems and reinforcement learning.
+        </p>
+        <p>
+          Analytical and policy roles with <strong>UNICEF</strong>, the
+          <strong>World Economic Forum</strong>, and the
+          <strong>International Crisis Group</strong>.
+        </p>
+        <p>
+          French–Thai; grew up in New York, Switzerland, and Hong Kong.
+          MPP candidate at <strong>LSE</strong>. Trained in Python, SQL, and AWS
+          data engineering. Bachelor's in Management &amp; Business Informatics
+          (Emlyon) and Sociology (Sorbonne).
+        </p>
+      </div>
 
-      <h1 class="landing-name">Cécile<br><em>Carrel</em></h1>
-
-      <p class="landing-bio">
-        My background is in engineering and technical program management at Amazon, 
-        including work on large-scale ML systems, and training in reinforcement learning.<br><br>
-        I have also worked in analytical and policy roles with the United Nations system 
-        (UNICEF), the World Economic Forum, and the International Crisis Group.<br><br>
-        I have French and Thai nationalities, having grown up in New York, Switzerland, 
-        and Hong Kong, and have worked across Europe — France, Germany, the U.K., and Switzerland.<br><br>
-        I am a candidate for the Master's in Public Policy at LSE. I hold a Bachelor's 
-        in Management and Business Informatics from Emlyon Business School and a Bachelor's 
-        in Sociology from Sorbonne Université. I have been formally trained in technical 
-        domains by Amazon (Certified Python, SQL; AWS Data Engineer).
-      </p>
-
-      <div class="landing-buttons">
+      <!-- CTA BUTTONS -->
+      <div class="buttons">
         <a href="engineering.html" class="btn btn-primary">
           Engineering Works <span class="btn-arrow">→</span>
         </a>
         <a href="research.html" class="btn btn-secondary">
-          Research & Policy <span class="btn-arrow">→</span>
+          Research &amp; Policy <span class="btn-arrow">→</span>
         </a>
       </div>
 
-    </div>
+      <!-- FOOTER LINKS -->
+      <div class="footer-links">
+        <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
+        <div class="footer-sep"></div>
+        <a href="https://linkedin.com/in/carrelcecile" target="_blank">LinkedIn</a>
+        <div class="footer-sep"></div>
+        <a href="https://github.com/carrelcecile" target="_blank">GitHub</a>
+        <div class="footer-sep"></div>
+        <a href="cecile_carrel_cv.pdf" target="_blank">CV ↓</a>
+      </div>
 
-    <!-- FOOTER LINKS -->
-    <div class="landing-footer">
-      <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
-      <a href="https://linkedin.com/in/carrelcecile" target="_blank">LinkedIn</a>
-      <a href="https://github.com/carrelcecile" target="_blank">GitHub</a>
-      <a href="cecile_carrel_cv.pdf" target="_blank">CV ↓</a>
     </div>
-
   </div>
 
 </body>
