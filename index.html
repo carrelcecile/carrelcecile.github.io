@@ -3,322 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cécile Carrel</title>
+  <title>Cécile Carrel — Geopolitics of AI</title>
+  <meta name="description" content="Cécile Carrel researches the geopolitics of AI, from compute and open-weight models to human rights and international security. LSE MPP (Distinction); Crisis Group; WEF; Amazon." />
+  <meta name="theme-color" content="#0a1428" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cécile Carrel — Geopolitics of AI" />
+  <meta property="og:description" content="Cécile Carrel researches the geopolitics of AI, from compute and open-weight models to human rights and international security. LSE MPP (Distinction); Crisis Group; WEF; Amazon." />
+  <meta property="og:url" content="https://carrelcecile.github.io/index.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1428'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23f4f1ea'%3EC%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ─── TOKENS ─── */
-    :root {
-      --navy-deep:   #0d1117;
-      --navy-mid:    #141b26;
-      --gold:        #b8985a;
-      --gold-faint:  rgba(184,152,90,0.15);
-      --text-primary:   #e8e2d9;
-      --text-secondary: rgba(232,226,217,0.62);
-      --text-muted:     rgba(232,226,217,0.38);
-      --rule:           rgba(232,226,217,0.10);
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'DM Sans', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--navy-deep);
-      color: var(--text-primary);
-      font-family: var(--font-body);
-      font-weight: 300;
-      min-height: 100vh;
-      /* subtle grain */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    /* ─── LAYOUT ─── */
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 2rem 80px;
-    }
-
-    /* ─── CARD ─── */
-    .card {
-      width: 100%;
-      max-width: 680px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0;
-    }
-
-    /* ─── HEADER ROW ─── */
-    .header-row {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      margin-bottom: 3rem;
-      margin-top: 1.5rem;
-      width: 100%;
-      justify-content: center;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.1s forwards;
-    }
-
-    .portrait-wrap {
-      flex-shrink: 0;
-      width: 260px;
-      height: 260px;
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-      /* thin gold border */
-      outline: 1px solid rgba(184,152,90,0.30);
-      outline-offset: 3px;
-    }
-
-    .portrait-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-      filter: brightness(0.80) contrast(1.06) grayscale(0.15);
-    }
-
-    .header-text {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      padding-bottom: 4px;
-    }
-
-    .eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    .name {
-      font-family: var(--font-display);
-      font-size: clamp(38px, 6vw, 58px);
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-    }
-
-    .name em {
-      font-style: italic;
-      color: var(--text-muted);
-    }
-
-    /* ─── DIVIDER ─── */
-    .rule {
-      width: 100%;
-      height: 1px;
-      background: var(--rule);
-      margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.25s forwards;
-    }
-
-    /* ─── BIO ─── */
-    .bio {
-      font-size: 14.5px;
-      line-height: 1.95;
-      color: var(--text-secondary);
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-      text-align: left;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.35s forwards;
-    }
-
-    .bio strong {
-      color: var(--text-primary);
-      font-weight: 400;
-    }
-
-    .bio p + p { margin-top: 1em; }
-
-    /* ─── BUTTONS ─── */
-    .buttons {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      margin-bottom: 3rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.45s forwards;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 26px;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 400;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      border-radius: 2px;
-      transition: all 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--text-primary);
-      color: var(--navy-deep);
-      border: 1px solid var(--text-primary);
-    }
-    .btn-primary:hover {
-      background: #fff;
-      border-color: #fff;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1px solid var(--rule);
-    }
-    .btn-secondary:hover {
-      border-color: rgba(255,255,255,0.35);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .btn-arrow { font-size: 15px; transition: transform 0.2s ease; }
-    .btn:hover .btn-arrow { transform: translateX(4px); }
-
-    /* ─── FOOTER LINKS ─── */
-    .footer-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: flex-start;
-      opacity: 0;
-      animation: fadeUp 0.7s ease 0.55s forwards;
-    }
-
-    .footer-links a {
-      font-size: 11px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      transition: color 0.2s ease;
-      position: relative;
-    }
-
-    .footer-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0; right: 0;
-      height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.2s ease;
-    }
-
-    .footer-links a:hover { color: var(--gold); }
-    .footer-links a:hover::after { transform: scaleX(1); }
-
-    .footer-sep {
-      width: 1px;
-      height: 14px;
-      background: var(--rule);
-    }
-
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 540px) {
-      .header-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .portrait-wrap { width: 150px; height: 150px; }
-      .buttons { flex-direction: column; }
-      .btn { justify-content: space-between; }
-      .footer-links { flex-wrap: wrap; gap: 1rem; }
-      .footer-sep { display: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="page">
-    <div class="card">
-
-      <!-- HEADER: photo + name side by side -->
-      <div class="header-row">
-        <div class="portrait-wrap">
-          <img src="professional_photo_blackandwhite.jpg" alt="Cécile Carrel" />
-        </div>
-        <div class="header-text">
-          <h1 class="name">Cécile Carrel</h1>
-        </div>
-      </div>
-
-      <div class="rule"></div>
-
-      <!-- BIO -->
-      <div class="bio">
-        <p>
-          My background is in engineering and technical program management at
-          <strong>Amazon</strong>, which included work on large-scale machine learning systems, and I have training
-          in reinforcement learning.
-        </p>
-        <p>
-          I have also worked in analytical and policy roles with the United Nations system
-          (<strong>UNICEF</strong>), statistics for the <strong>World Economic Forum</strong>, and research and policy communications for the
-          <strong>International Crisis Group</strong>.
-        </p>
-        <p>
-          I have French and Thai nationalities, and come from an international background, having grown up in New York, Switzerland,
-          and Hong Kong. I have also studied and worked across Europe, including France, Germany, the U.K., Switzerland, and Brussels. I am now based in London.
-        </p>
-        <p>
-          I am a candidate for the Master's in Public Policy at the <strong>London School of Economics</strong>. I hold a Bachelor's (Grande Ecole)
-          in Business and Informatics from <strong>Emlyon Business School</strong> and a Bachelor's
-          in Sociology from <strong>Sorbonne Université</strong>. I have been formally trained in technical
-          domains by Amazon (Certified Python, SQL; AWS Data Engineer).
-        </p>
-      </div>
-
-      <!-- CTA BUTTONS -->
-      <div class="buttons">
-        <a href="engineering.html" class="btn btn-primary">
-          Engineering Works <span class="btn-arrow">→</span>
-        </a>
-        <a href="research.html" class="btn btn-secondary">
-          Research &amp; Policy <span class="btn-arrow">→</span>
-        </a>
-      </div>
-
-      <!-- FOOTER LINKS -->
-      <div class="footer-links">
-        <a href="mailto:c.j.carrel@lse.ac.uk">Email</a>
-        <div class="footer-sep"></div>
-        <a href="https://linkedin.com/in/carrelcecile" target="_blank">LinkedIn</a>
-        <div class="footer-sep"></div>
-        <a href="https://github.com/carrelcecile" target="_blank">GitHub</a>
-
-      </div>
-
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="index.html" class="nav-name">Cécile Carrel</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="selected-research.html">Selected Research</a>
+      <a href="mailto:cecilecrl@gmail.com" class="nav-cta">Contact ↗</a>
     </div>
-  </div>
+  </nav>
 
+  <main id="main">
+
+    <section class="home-hero">
+      <div class="container home-hero-grid">
+        <div class="portrait">
+          <img src="professional_photo_blackandwhite.jpg" alt="Portrait of Cécile Carrel" />
+        </div>
+        <div>
+          <p class="eyebrow">Researcher · Geopolitics of AI · Public policy</p>
+          <h1 class="home-name">Cécile Carrel</h1>
+          <p class="lede">I research the geopolitics of AI: how control of compute, and the rules built around it, shift power between states, and what that means for the institutions and companies caught in between.</p>
+          <div class="hero-actions">
+            <a href="selected-research.html" class="btn btn-primary">Selected Research →</a>
+            <a href="#speaking" class="btn btn-secondary">Speaking &amp; events</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container credentials" aria-label="Institutions">
+        <div class="cred">
+          <p class="cred-label">Analysis published for</p>
+          <p class="cred-list">UN Security Council<br />EU External Action Service<br />Three foreign ministries</p>
+        </div>
+        <div class="cred">
+          <p class="cred-label">Recommendations presented to</p>
+          <p class="cred-list">Chatham House<br />Alan Turing Institute<br />Tony Blair Institute</p>
+        </div>
+        <div class="cred">
+          <p class="cred-label">Worked at</p>
+          <p class="cred-list">International Crisis Group<br />World Economic Forum<br />UNICEF &middot; Amazon</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-light" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="bio">
+          <p>I came to policy through engineering. At <strong>Amazon</strong> I deployed machine learning routing across Spain's logistics network, and my analysis of structural disparities across ten fulfilment centres triggered a Europe-wide fairness audit. It left me with a lasting interest in the gap between what a system is said to do and what anyone can verify about it, which is the question I now bring to AI governance.</p>
+          <p>At the <strong>International Crisis Group</strong> I contributed to published analysis for the UN Security Council, the EU External Action Service and three foreign ministries, spanning Asia's militarisation, Red Sea maritime security, European security and Latin America. At the <strong>World Economic Forum</strong> I built the statistical foundation for the engagement analytics reported monthly to the Managing Board, and for <strong>UNICEF</strong> I turned Eswatini's national maternal health survey into a dashboard and map for the government.</p>
+          <p>My research now centres on AI compute and open-weight models: Europe's dependencies in the compute stack, how export controls and US–China rivalry constrain its options, and how human rights law applies to the rules for powerful models. I recently completed a Master of Public Policy at the <strong>London School of Economics</strong>, with Distinction, and presented policy recommendations on digital identity to experts at <strong>Chatham House</strong>, the Alan Turing Institute and the Tony Blair Institute.</p>
+          <p>I am French and Thai, grew up in New York, Switzerland and Hong Kong, and live in London. I work in French and English.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="speaking">
+      <div class="container">
+        <h2 class="section-title">Speaking</h2>
+        <p class="section-intro">Available for panels, talks and closed-door roundtables on the geopolitics of AI.</p>
+
+        <div class="topic-grid">
+          <div class="topic">
+            <h3>AI compute and geopolitical dominance</h3>
+            <p>Who controls the chips and the capacity, and how that translates into power between the US, China and Europe.</p>
+          </div>
+          <div class="topic">
+            <h3>Open-weight models and human rights</h3>
+            <p>How human rights law applies to the rules for powerful, openly released models.</p>
+          </div>
+          <div class="topic">
+            <h3>Europe's strategic dependencies</h3>
+            <p>Export controls, economic security and Europe's room for manoeuvre between Washington and Beijing.</p>
+          </div>
+          <div class="topic">
+            <h3>Technology in conflict</h3>
+            <p>Autonomous weapons, maritime security and ASEAN diplomacy.</p>
+          </div>
+        </div>
+
+        <div class="speaker-bio">
+          <p class="speaker-bio-label">Speaker bio</p>
+          <p id="speaker-bio-text">Cécile Carrel is a researcher in the geopolitics of AI. She holds a Master of Public Policy from the London School of Economics, with Distinction. Her work centres on AI compute, open-weight model regulation and Europe's strategic dependencies. At the International Crisis Group she contributed to published analysis for the UN Security Council, the EU External Action Service and three foreign ministries; she has built analytics for the World Economic Forum's Managing Board, and presented policy recommendations to experts at Chatham House, the Alan Turing Institute and the Tony Blair Institute. She previously worked in machine learning at Amazon. French and Thai, she is based in London.</p>
+          <button type="button" class="chip-btn" data-copy="speaker-bio-text">Copy bio</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section theme-light" id="provide">
+      <div class="container">
+        <h2 class="section-title">What I provide</h2>
+        <p class="section-intro">For governments, institutions and companies that need a clear position on AI compute and the geopolitics around it.</p>
+
+        <div class="offer-grid">
+          <div class="offer">
+            <h3>Research</h3>
+            <p>Policy research and briefs on AI compute, export controls and open-weight model regulation, written for decision-makers.</p>
+          </div>
+          <div class="offer">
+            <h3>Advice</h3>
+            <p>Strategic advice on Europe's compute dependencies and its geopolitical positioning between the US, China and ASEAN.</p>
+          </div>
+          <div class="offer">
+            <h3>Analysis</h3>
+            <p>Quantitative and geospatial analysis for policy teams, from a technical background in machine learning.</p>
+          </div>
+        </div>
+
+        <p class="focus-label">Focus areas</p>
+        <div class="card-tags">
+          <span>AI compute</span><span>Export controls</span><span>Open-weight models</span><span>Human rights &amp; AI</span><span>US–China rivalry</span><span>Europe &amp; ASEAN</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container cta-band">
+        <div>
+          <h2 class="section-title">Get in touch</h2>
+          <p class="section-intro">For speaking invitations, research or advisory work.</p>
+        </div>
+        <a href="mailto:cecilecrl@gmail.com" class="btn btn-primary">Email me →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Cécile Carrel</p>
+        <p class="footer-sub">Geopolitics of AI</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="selected-research.html">Selected Research</a>
+        <a href="mailto:cecilecrl@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/carrelcecile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/carrelcecile" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
