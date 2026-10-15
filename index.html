@@ -1,359 +1,166 @@
-/* ===========================================================
-   TOKENS
-   One typeface throughout. To change it, edit --font only.
-=========================================================== */
-:root {
-  --navy-950: #060d1c;
-  --navy-900: #0a1428;
-  --navy-800: #0f1d38;
-  --navy-700: #16284a;
-  --ivory:    #f7f5f0;
-  --paper:    #ffffff;
-  --cream:    #f4f1ea;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cécile Carrel — Geopolitics of AI</title>
+  <meta name="description" content="Cécile Carrel researches the geopolitics of AI, from compute and open-weight models to human rights and international security. LSE MPP (Distinction); International Crisis Group; World Economic Forum." />
+  <meta name="theme-color" content="#0a1428" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cécile Carrel — Geopolitics of AI" />
+  <meta property="og:description" content="Cécile Carrel researches the geopolitics of AI, from compute and open-weight models to human rights and international security. LSE MPP (Distinction); International Crisis Group; World Economic Forum." />
+  <meta property="og:url" content="https://carrelcecile.github.io/index.html" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1428'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23f4f1ea'%3EC%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  --font: 'EB Garamond', 'Times New Roman', Times, serif;
-  --max: 1080px;
-  --ease: 0.3s ease;
+  <a href="#main" class="skip-link">Skip to content</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="index.html" class="nav-name">Cécile Carrel</a>
+    <div class="nav-links">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="selected-research.html">Selected Research</a>
+      <a href="mailto:cecilecrl@gmail.com" class="nav-cta">Contact ↗</a>
+    </div>
+  </nav>
 
-  /* default theme: navy */
-  --bg:       var(--navy-900);
-  --ink:      #f4f1ea;
-  --ink-2:    rgba(244,241,234,0.82);
-  --ink-3:    rgba(244,241,234,0.64);
-  --line:     rgba(244,241,234,0.16);
-  --line-2:   rgba(244,241,234,0.42);
-  --btn-bg:   #f4f1ea;
-  --btn-ink:  var(--navy-900);
-}
+  <main id="main">
 
-/* light themes re-point the same tokens */
-.theme-light, .theme-white {
-  --bg:       var(--ivory);
-  --ink:      var(--navy-900);
-  --ink-2:    rgba(10,20,40,0.82);
-  --ink-3:    rgba(10,20,40,0.64);
-  --line:     rgba(10,20,40,0.14);
-  --line-2:   rgba(10,20,40,0.42);
-  --btn-bg:   var(--navy-900);
-  --btn-ink:  #f4f1ea;
-}
-.theme-white { --bg: var(--paper); }
+    <section class="home-hero">
+      <div class="container home-hero-grid">
+        <div class="portrait">
+          <img src="professional_photo_blackandwhite.jpg" alt="Portrait of Cécile Carrel" />
+        </div>
+        <div>
+          <p class="eyebrow">Researcher · Geopolitics of AI · Public policy</p>
+          <h1 class="home-name">Cécile Carrel</h1>
+          <p class="lede">I research the geopolitics of AI: how control of compute, and the rules built around it, shift power between states, and what that means for the institutions and companies caught in between.</p>
+          <div class="hero-actions">
+            <a href="selected-research.html" class="btn btn-primary">Selected Research →</a>
+            <a href="#speaking" class="btn btn-secondary">Speaking &amp; events</a>
+          </div>
+        </div>
+      </div>
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 17px; }
-body {
-  font-family: var(--font); font-weight: 400; line-height: 1.7;
-  background: var(--navy-900); color: var(--ink);
-  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-}
-a { color: inherit; text-decoration: none; }
-img { max-width: 100%; display: block; }
-button { font-family: inherit; }
-[id] { scroll-margin-top: 80px; }
-[hidden] { display: none !important; }
-.container { max-width: var(--max); margin: 0 auto; }
+      <div class="container credentials" aria-label="Institutions">
+        <div class="cred">
+          <p class="cred-label">Analysis published for audiences including</p>
+          <p class="cred-list">UN Security Council<br />EU External Action Service<br />Foreign ministries<br />Managing Boards<br />C-suite executives</p>
+        </div>
+        <div class="cred">
+          <p class="cred-label">Recommendations presented to</p>
+          <p class="cred-list">Chatham House<br />Alan Turing Institute<br />Tony Blair Institute</p>
+        </div>
+        <div class="cred">
+          <p class="cred-label">Worked at</p>
+          <p class="cred-list">International Crisis Group<br />World Economic Forum<br />UNICEF &middot; Amazon</p>
+        </div>
+      </div>
+    </section>
 
-/* every full-width block takes its colours from the tokens */
-.home-hero, .section, .page-hero, .band { background: var(--bg); color: var(--ink); }
+    <section class="section theme-light" id="about">
+      <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="bio">
+          <p>I research the geopolitics of AI. My current work centres on AI compute and on how open-source, open-weight and closed models should be governed: Europe's dependencies in the compute stack, how export controls and US–China rivalry constrain its options, and how human rights law applies to the rules for powerful models. I recently completed a Master of Public Policy at the <strong>London School of Economics</strong>, with Distinction, and I now focus my work on research and advice in this field.</p>
+          <p>It builds on work for international institutions. At the <strong>International Crisis Group</strong> I contributed to published analysis for the UN Security Council, the EU External Action Service and foreign ministries, spanning Asia's militarisation, Red Sea maritime security, European security and Latin America. At the <strong>World Economic Forum</strong> I built the statistical foundation for engagement analytics reported monthly to the Managing Board, and for <strong>UNICEF</strong> I turned Eswatini's national maternal health survey into a dashboard and map for the government.</p>
+          <p>I have presented policy recommendations on digital identity to experts at <strong>Chatham House</strong>, the Alan Turing Institute and the Tony Blair Institute, and I bring a technical background in computer science and machine learning to policy questions.</p>
+          <p>I am French and Thai, grew up in New York, Switzerland and Hong Kong, and live in London. I work in French and English.</p>
+        </div>
+      </div>
+    </section>
 
-/* ===========================================================
-   NAV
-=========================================================== */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 66px;
-  display: flex; align-items: center; justify-content: space-between; padding: 0 3rem;
-  background: rgba(6,13,28,0.94); backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(244,241,234,0.12);
-  color: #f4f1ea;
-}
-.nav-name { font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; }
-.nav-links { display: flex; align-items: center; gap: 2.6rem; }
-.nav-links a {
-  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(244,241,234,0.7); transition: color var(--ease);
-}
-.nav-links a:hover, .nav-links a[aria-current="page"] { color: #f4f1ea; }
-.nav-cta {
-  color: #f4f1ea !important; padding: 8px 18px;
-  border: 1px solid rgba(244,241,234,0.45);
-  transition: background var(--ease), color var(--ease) !important;
-}
-.nav-cta:hover { background: #f4f1ea; color: var(--navy-900) !important; }
+    <section class="section" id="speaking">
+      <div class="container">
+        <h2 class="section-title">Speaking</h2>
 
-/* ===========================================================
-   SHARED TYPE
-=========================================================== */
-.eyebrow, .focus-label, .region-label, .pieces-label {
-  font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3);
-}
-.section-title, .domain-title {
-  font-weight: 400; line-height: 1.1; letter-spacing: -0.005em;
-}
-.section-title { font-size: clamp(36px, 4.6vw, 52px); margin-bottom: 14px; }
-.domain-title  { font-size: clamp(34px, 4.2vw, 46px); }
-.section-title::after, .domain-title::after {
-  content: ''; display: block; width: 56px; height: 1px; background: var(--line-2); margin-top: 22px;
-}
-.section-intro, .domain-intro {
-  font-size: 19px; line-height: 1.7; color: var(--ink-2); max-width: 620px; margin-top: 18px;
-}
-.section-intro { margin-bottom: 44px; }
+        <div class="topic-grid">
+          <div class="topic">
+            <h3>AI compute and geopolitical dominance</h3>
+            <p>Who controls the chips and the capacity, and how that translates into power between the US, China and Europe.</p>
+          </div>
+          <div class="topic">
+            <h3>Open-weight models and human rights</h3>
+            <p>How human rights law applies to the rules for powerful, openly released models.</p>
+          </div>
+          <div class="topic">
+            <h3>Europe's strategic dependencies</h3>
+            <p>Export controls, economic security and Europe's room for manoeuvre between Washington and Beijing.</p>
+          </div>
+          <div class="topic">
+            <h3>Technology in conflict</h3>
+            <p>Autonomous weapons, maritime security and ASEAN diplomacy.</p>
+          </div>
+        </div>
 
-.btn {
-  display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
-  font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase;
-  border: 1px solid var(--line-2); transition: all var(--ease); color: var(--ink);
-}
-.btn-primary { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
-.btn-primary:hover { background: transparent; color: var(--ink); border-color: var(--ink); }
-.btn-secondary:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+        <div class="speaker-bio">
+          <p class="speaker-bio-label">Speaker bio</p>
+          <p id="speaker-bio-text">Cécile Carrel is a researcher in the geopolitics of AI. She holds a Master of Public Policy from the London School of Economics, with Distinction. Her current work centres on AI compute, the governance of open-source, open-weight and closed models, and Europe's strategic dependencies. At the International Crisis Group she contributed to published analysis for the UN Security Council, the EU External Action Service and foreign ministries; she has built analytics reported to the World Economic Forum's Managing Board, and presented policy recommendations to experts at Chatham House, the Alan Turing Institute and the Tony Blair Institute. She brings a technical background in computer science and machine learning to policy analysis. French and Thai, she is based in London.</p>
+          <button type="button" class="chip-btn" data-copy="speaker-bio-text">Copy bio</button>
+        </div>
+      </div>
+    </section>
 
-.card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.card-tags span {
-  font-size: 14px; letter-spacing: 0.04em; padding: 4px 13px;
-  border: 1px solid var(--line); color: var(--ink-2);
-}
+    <section class="section theme-light" id="provide">
+      <div class="container">
+        <h2 class="section-title">What I provide</h2>
+        <p class="section-intro">For governments, institutions and companies that need a clear position on AI compute and the geopolitics around it.</p>
 
-/* ===========================================================
-   HOME
-=========================================================== */
-.home-hero {
-  padding: 150px 3rem 100px;
-  background:
-    radial-gradient(ellipse 80% 70% at 78% 8%, rgba(36,60,110,0.45), transparent 62%),
-    linear-gradient(180deg, var(--navy-900), var(--navy-950));
-}
-.home-hero-grid { display: grid; grid-template-columns: 300px 1fr; gap: 80px; align-items: center; }
-.portrait { width: 300px; aspect-ratio: 4 / 5; position: relative; }
-.portrait::before {
-  content: ''; position: absolute; inset: -14px -14px 14px 14px; z-index: 0;
-  border: 1px solid rgba(244,241,234,0.3);
-}
-.portrait img {
-  position: relative; z-index: 1; width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
-  filter: grayscale(1) contrast(1.05) brightness(0.92);
-}
-.eyebrow { margin-bottom: 22px; }
-.home-name {
-  font-weight: 400; line-height: 0.98; letter-spacing: -0.015em;
-  font-size: clamp(54px, 8.4vw, 100px); margin-bottom: 30px;
-}
-.lede {
-  font-size: clamp(21px, 2.3vw, 27px); line-height: 1.55; font-style: italic;
-  color: var(--ink-2); max-width: 640px;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
+        <div class="offer-grid">
+          <div class="offer">
+            <h3>Research</h3>
+            <p>Policy research and briefs on AI compute, export controls and open-weight model regulation, written for decision-makers.</p>
+          </div>
+          <div class="offer">
+            <h3>Advice</h3>
+            <p>Strategic advice on Europe's compute dependencies and its geopolitical positioning between the US, China and ASEAN.</p>
+          </div>
+          <div class="offer">
+            <h3>Analysis</h3>
+            <p>Quantitative and geospatial analysis for policy teams, from a technical background in machine learning.</p>
+          </div>
+        </div>
 
-.credentials {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
-  margin-top: 96px; padding-top: 34px; border-top: 1px solid var(--line);
-}
-.cred { padding-right: 28px; }
-.cred + .cred { padding-left: 28px; border-left: 1px solid var(--line); }
-.cred-label { font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
-.cred-list { font-size: 20px; line-height: 1.75; color: var(--ink); }
+        <p class="focus-label">Focus areas</p>
+        <div class="card-tags">
+          <span>AI compute</span><span>Export controls</span><span>Open-source/Open-weight/Closed models</span><span>Human rights &amp; AI</span><span>US–China rivalry</span><span>Europe &amp; ASEAN</span>
+        </div>
+      </div>
+    </section>
 
-.section { padding: 104px 3rem; }
+    <section class="section" id="contact">
+      <div class="container cta-band">
+        <div>
+          <h2 class="section-title">Get in touch</h2>
+          <p class="section-intro">For speaking invitations, research or advisory work.</p>
+        </div>
+        <a href="mailto:cecilecrl@gmail.com" class="btn btn-primary">Email me →</a>
+      </div>
+    </section>
 
-.bio { max-width: 700px; margin-top: 44px; }
-.bio p { font-size: 20px; line-height: 1.85; color: var(--ink-2); margin-bottom: 1.3em; }
-.bio p:last-child { margin-bottom: 0; }
-.bio strong { color: var(--ink); font-weight: 500; }
+  </main>
 
-.offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: offer; }
-.offer {
-  counter-increment: offer; padding: 30px 34px 12px 0; margin-right: 34px;
-  border-top: 1px solid var(--line-2);
-}
-.offer:last-child { margin-right: 0; padding-right: 0; }
-.offer::before {
-  content: counter(offer, decimal-leading-zero);
-  display: block; font-style: italic; font-size: 18px; color: var(--ink-3); margin-bottom: 16px;
-}
-.offer h3 { font-weight: 400; font-size: 30px; line-height: 1.15; margin-bottom: 14px; }
-.offer p { font-size: 18px; line-height: 1.75; color: var(--ink-2); }
-.focus-label { margin: 64px 0 18px; }
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Cécile Carrel</p>
+        <p class="footer-sub">Geopolitics of AI</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="selected-research.html">Selected Research</a>
+        <a href="mailto:cecilecrl@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/carrelcecile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/carrelcecile" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
 
-.section-title + .topic-grid { margin-top: 48px; }
-.topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 64px; row-gap: 40px; }
-.topic { padding-top: 26px; border-top: 1px solid var(--line-2); }
-.topic h3 { font-weight: 400; font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
-.topic p { font-size: 18px; line-height: 1.75; color: var(--ink-2); }
-
-.speaker-bio { margin-top: 72px; padding: 40px 44px 36px; border: 1px solid var(--line-2); max-width: 820px; }
-.speaker-bio-label { font-size: 12.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 18px; }
-.speaker-bio p#speaker-bio-text { font-size: 19.5px; line-height: 1.85; color: var(--ink-2); margin-bottom: 26px; }
-
-.cta-band { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
-.cta-band .section-intro { margin-bottom: 0; }
-
-/* ===========================================================
-   SELECTED RESEARCH
-=========================================================== */
-.page-hero {
-  padding: 150px 3rem 80px;
-  background:
-    radial-gradient(ellipse 70% 90% at 85% 0%, rgba(36,60,110,0.4), transparent 62%),
-    linear-gradient(180deg, var(--navy-900), var(--navy-950));
-}
-.page-title { font-weight: 400; line-height: 1; letter-spacing: -0.015em; font-size: clamp(52px, 8vw, 92px); margin-bottom: 22px; }
-.page-title em { font-style: italic; color: var(--ink-2); }
-.page-subtitle { font-size: 22px; line-height: 1.6; font-style: italic; color: var(--ink-2); max-width: 620px; }
-
-.jump { display: flex; flex-wrap: wrap; gap: 8px 30px; margin-top: 46px; padding-top: 26px; border-top: 1px solid var(--line); }
-.jump a {
-  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-3);
-  padding-bottom: 4px; border-bottom: 1px solid transparent; transition: all var(--ease);
-}
-.jump a:hover { color: var(--ink); border-color: var(--line-2); }
-
-.band { padding: 96px 3rem; }
-.domain-head { margin-bottom: 44px; }
-
-.research-list { border-bottom: 1px solid var(--line); }
-.research-item {
-  display: grid; grid-template-columns: 230px 1fr; gap: 48px;
-  padding: 38px 0; border-top: 1px solid var(--line);
-}
-.research-meta { display: flex; flex-direction: column; gap: 6px; padding-top: 6px; }
-.research-org { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); line-height: 1.5; }
-.research-year { font-size: 17px; font-style: italic; color: var(--ink-3); }
-.research-body { display: flex; flex-direction: column; gap: 14px; }
-.research-body h3 { font-weight: 400; font-size: 30px; line-height: 1.2; }
-.research-body p { font-size: 18.5px; line-height: 1.8; color: var(--ink-2); }
-.research-item--compact { padding: 30px 0; }
-.research-item--compact h3 { font-size: 26px; }
-
-.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 52px; border-top: 1px solid var(--line-2); }
-.stat { padding: 30px 28px 6px 0; }
-.stat + .stat { padding-left: 28px; border-left: 1px solid var(--line); }
-.stat-val { font-size: 64px; font-weight: 400; line-height: 1; margin-bottom: 12px; }
-.stat-label { font-size: 16px; line-height: 1.55; color: var(--ink-3); max-width: 240px; }
-
-.region { margin-bottom: 44px; }
-.region:last-child { margin-bottom: 0; }
-.region-label { margin-bottom: 14px; color: var(--ink); }
-.pieces { list-style: none; border-top: 1px solid var(--line-2); }
-.piece {
-  display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;
-  padding: 20px 0; border-bottom: 1px solid var(--line);
-}
-.piece-title { font-size: 21px; line-height: 1.35; font-weight: 400; display: inline; }
-a.piece-title { border-bottom: 1px solid var(--line-2); transition: border-color var(--ease); }
-a.piece-title:hover { border-color: var(--ink); }
-.piece-detail { display: block; font-size: 16px; font-style: italic; color: var(--ink-3); margin-top: 5px; line-height: 1.5; }
-.piece-side { display: flex; align-items: center; gap: 18px; justify-content: flex-end; }
-.piece-date { font-size: 16px; font-style: italic; color: var(--ink-3); white-space: nowrap; }
-
-.chip-btn {
-  font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer;
-  padding: 7px 16px; color: var(--ink); background: transparent;
-  border: 1px solid var(--line-2); transition: all var(--ease);
-}
-.chip-btn:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-
-/* ===========================================================
-   POP-UP
-=========================================================== */
-.modal-overlay {
-  position: fixed; inset: 0; z-index: 300; padding: 24px;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(6,13,28,0.86); backdrop-filter: blur(5px);
-}
-.modal-box {
-  --ink: var(--navy-900); --ink-2: rgba(10,20,40,0.82); --ink-3: rgba(10,20,40,0.64);
-  --line: rgba(10,20,40,0.14); --line-2: rgba(10,20,40,0.42);
-  position: relative; width: 100%; max-width: 880px; max-height: calc(100vh - 48px); overflow-y: auto;
-  background: var(--ivory); color: var(--ink); padding: 48px 52px 40px;
-}
-.modal-close {
-  position: absolute; top: 18px; right: 20px; width: 38px; height: 38px; cursor: pointer;
-  background: transparent; border: 1px solid var(--line-2); color: var(--ink); font-size: 14px;
-  transition: all var(--ease);
-}
-.modal-close:hover { background: var(--ink); color: var(--ivory); }
-.modal-tag { font-size: 12.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; padding-right: 50px; }
-.modal-title { font-weight: 400; font-size: 34px; line-height: 1.15; margin-bottom: 24px; padding-right: 50px; }
-.modal-body p { font-size: 19px; line-height: 1.85; color: var(--ink-2); margin-bottom: 1em; }
-.modal-body iframe { width: 100%; height: min(62vh, 520px); border: 1px solid var(--line); background: #fff; }
-.modal-body img { width: 100%; height: auto; border: 1px solid var(--line); }
-.modal-source { display: inline-block; margin-top: 10px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--line-2); }
-
-/* ===========================================================
-   FOOTER
-=========================================================== */
-.footer { background: var(--navy-950); color: #f4f1ea; padding: 56px 3rem; border-top: 1px solid rgba(244,241,234,0.1); }
-.footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
-.footer-name { font-size: 15px; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 8px; }
-.footer-sub { font-size: 16px; font-style: italic; color: rgba(244,241,234,0.64); }
-.footer-links { display: flex; flex-wrap: wrap; gap: 1.6rem 2.2rem; }
-.footer-links a {
-  font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(244,241,234,0.64); transition: color var(--ease);
-}
-.footer-links a:hover { color: #f4f1ea; }
-
-/* ===========================================================
-   ACCESSIBILITY, MOTION, PRINT
-=========================================================== */
-.skip-link {
-  position: absolute; left: 1rem; top: -56px; z-index: 400; padding: 10px 16px;
-  background: #f4f1ea; color: var(--navy-900); font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
-  transition: top var(--ease);
-}
-.skip-link:focus { top: 10px; }
-a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
-
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.8s ease, transform 0.8s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-@media print {
-  .nav, .skip-link, .hero-actions, .footer-links, .jump { display: none; }
-  body, .home-hero, .page-hero, .band, .section, .footer { background: #fff !important; color: #000 !important; }
-  .home-hero, .page-hero { padding-top: 24px; }
-  * { color: #111 !important; border-color: #bbb !important; }
-  .research-item, .offer, .piece { break-inside: avoid; }
-}
-
-/* ===========================================================
-   RESPONSIVE
-=========================================================== */
-@media (max-width: 900px) {
-  html { font-size: 16.5px; }
-  .nav { padding: 0 1.5rem; }
-  .home-hero { padding: 120px 1.5rem 72px; }
-  .home-hero-grid { grid-template-columns: 1fr; gap: 56px; }
-  .portrait { width: 220px; }
-  .section, .band { padding: 72px 1.5rem; }
-  .page-hero { padding: 120px 1.5rem 60px; }
-  .offer-grid { grid-template-columns: 1fr; }
-  .credentials { grid-template-columns: 1fr; margin-top: 64px; }
-  .cred, .cred + .cred { padding: 22px 0; border-left: none; }
-  .cred + .cred { border-top: 1px solid var(--line); }
-  .topic-grid { grid-template-columns: 1fr; }
-  .speaker-bio { padding: 28px 22px 26px; }
-  .offer, .offer:last-child { margin-right: 0; padding-right: 0; margin-bottom: 18px; }
-  .research-item { grid-template-columns: 1fr; gap: 12px; }
-  .stats { grid-template-columns: 1fr; }
-  .stat, .stat + .stat { padding: 22px 0 8px; border-left: none; }
-  .stat + .stat { border-top: 1px solid var(--line); }
-  .modal-box { padding: 36px 24px 28px; }
-  .footer { padding: 44px 1.5rem; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
-}
-
-@media (max-width: 600px) {
-  .nav { padding: 0 1rem; }
-  .nav-name { display: none; }
-  .nav-links { width: 100%; justify-content: space-between; gap: 0.5rem; }
-  .nav-links a { font-size: 11.5px; letter-spacing: 0.1em; }
-  .nav-cta { padding: 6px 12px; }
-  .piece { grid-template-columns: 1fr; gap: 12px; }
-  .piece-side { justify-content: flex-start; }
-}
+  <script src="script.js"></script>
+</body>
+</html>
