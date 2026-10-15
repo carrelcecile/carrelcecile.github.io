@@ -142,7 +142,7 @@ em, i, cite, address { font-style: normal; }
 }
 .cred { padding-right: 28px; }
 .cred + .cred { padding-left: 28px; border-left: 1px solid var(--line); }
-.cred-label { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 16px; }
+.cred-label { font-size: 12px; line-height: 1.6; min-height: 3.2em; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 14px; }
 .cred-list { font-size: 19.5px; line-height: 1.8; color: var(--ink); }
 
 .section { padding: 120px 3rem; }
@@ -257,6 +257,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline
   .offer-grid { grid-template-columns: 1fr; }
   .credentials { grid-template-columns: 1fr; margin-top: 68px; }
   .cred, .cred + .cred { padding: 22px 0; border-left: none; }
+  .cred-label { min-height: 0; }
   .cred + .cred { border-top: 1px solid var(--line); }
   .topic-grid { grid-template-columns: 1fr; }
   .speaker-bio { padding: 28px 22px 26px; }
