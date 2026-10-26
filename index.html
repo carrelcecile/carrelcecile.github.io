@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
   <meta name="description" content="Cécile Carrel researches the geopolitics of AI: compute, open-weight model governance and Europe's strategic dependencies. LSE MPP (Distinction)." />
   <meta name="theme-color" content="#f6f1e8" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
   <meta property="og:title" content="Cécile Carrel — Geopolitics of AI" />
   <meta property="og:description" content="Cécile Carrel researches the geopolitics of AI: compute, open-weight model governance and Europe's strategic dependencies. LSE MPP (Distinction)." />
   <meta property="og:url" content="https://carrelcecile.github.io/index.html" />
@@ -35,12 +36,13 @@
   <header class="masthead">
     <div class="container masthead-title">
       <a href="index.html" class="masthead-name">Cécile Carrel</a>
-      <p class="masthead-sub">Geopolitics of AI</p>
     </div>
     <nav class="masthead-nav" aria-label="Primary">
       <div class="container">
         <a href="index.html" aria-current="page">Home</a>
-        <a href="selected-research.html">Selected Research</a>
+        <a href="selected-research.html">Research</a>
+        <a href="crisis-group.html">Crisis Group</a>
+        <a href="skills.html">Skills</a>
         <a href="mailto:cecilecrl@gmail.com">Contact</a>
       </div>
     </nav>
@@ -51,12 +53,16 @@
     <section class="home-hero">
       <div class="container home-hero-grid">
         <div class="hero-text">
-          <h1 class="home-statement">I research the geopolitics of AI: who controls compute, and how the rules built around it shift power between states.</h1>
-          <p class="hero-bio">I hold a Master of Public Policy from the London School of Economics, with Distinction. I am French and Thai, grew up in New York, Switzerland and Hong Kong, and live in London. I work in French and English.</p>
+          <h1 class="sr-only">Cécile Carrel, researcher in the geopolitics of AI</h1>
+          <div class="hero-bio" id="hero-bio-text">
+            <p>Cécile Carrel is a researcher working on the geopolitics of AI, with a focus on compute, the governance of open-weight models and Europe&rsquo;s strategic dependencies. She began her career in engineering and data, with a background in computer science and machine learning, before moving into policy through the World Economic Forum, the International Crisis Group and UNICEF.</p>
+            <p>She holds a Master of Public Policy from the London School of Economics, with Distinction, and is now a researcher at Augur AI, where she studies the positions of France and Sweden in the AI supply chain. French and Thai, she grew up in New York, Switzerland and Hong Kong, and is based in London.</p>
+          </div>
           <nav class="hero-links" aria-label="Sections">
             <a href="selected-research.html">Selected Research <span aria-hidden="true">→</span></a>
-            <a href="#speaking">Speaking <span aria-hidden="true">↓</span></a>
+            <a href="#focus">Focus <span aria-hidden="true">↓</span></a>
             <a href="mailto:cecilecrl@gmail.com">Email <span aria-hidden="true">↗</span></a>
+            <button type="button" data-copy="hero-bio-text">Copy bio</button>
           </nav>
         </div>
         <figure class="portrait">
@@ -81,33 +87,11 @@
       </div>
     </section>
 
-    <section class="section" id="path">
-      <div class="container split">
-        <div class="split-head"><h2 class="section-title">Path</h2></div>
-        <div class="split-body">
-        <div class="offer-grid">
-          <div class="offer">
-            <h3>Engineering</h3>
-            <p>Machine learning and data analytics, including for the World Economic Forum&rsquo;s Managing Board.</p>
-          </div>
-          <div class="offer">
-            <h3>Policy</h3>
-            <p>Research and communications at the International Crisis Group, on Indo-Pacific militarisation and Red Sea security. A digital identity framework presented at Chatham House.</p>
-          </div>
-          <div class="offer">
-            <h3>Research</h3>
-            <p>Work on AI compute and open-weight model governance, including an <a href="https://france-import-dependence-dashboard.streamlit.app/" target="_blank" rel="noopener noreferrer">interactive dashboard</a> on France&rsquo;s import dependence.</p>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="current">
       <div class="container split">
         <div class="split-head"><h2 class="section-title">Current research</h2></div>
         <div class="split-body">
-          <p class="section-intro">At Augur AI, I research France&rsquo;s and Sweden&rsquo;s positioning in the AI supply chain. The dashboard below maps France&rsquo;s import dependence in AI-related hardware infrastructure.</p>
+          <p class="section-intro">At Augur AI, Cécile is researching how France and Sweden are positioned in the AI supply chain. The dashboard below, built for that work, shows France&rsquo;s import dependence in AI-related hardware infrastructure.</p>
           <figure class="embed">
             <iframe src="https://france-import-dependence-dashboard.streamlit.app/?embed=true" title="France import dependence in AI hardware: interactive dashboard" loading="lazy"></iframe>
             <figcaption><span>Interactive dashboard · Augur AI, 2026</span><a href="https://france-import-dependence-dashboard.streamlit.app/" target="_blank" rel="noopener noreferrer">Open full dashboard ↗</a></figcaption>
@@ -120,32 +104,27 @@
       <div class="container split">
         <div class="split-head"><h2 class="section-title">Focus</h2></div>
         <div class="split-body">
-        <p class="section-intro">Research and advice for governments, institutions and companies.</p>
+        <p class="section-intro">Cécile researches and advises on four themes, for governments, institutions and companies.</p>
 
         <div class="topic-grid">
           <div class="topic">
             <h3>AI compute and geopolitical dominance</h3>
-            <p>Who controls chips and capacity, and what that means for the US, China and Europe.</p>
+            <p>Who controls chips and computing capacity, and what that means for the United States, China and Europe.</p>
           </div>
           <div class="topic">
             <h3>Open-weight models and human rights</h3>
-            <p>How human rights law applies to the rules for openly released models.</p>
+            <p>How human rights law bears on the rules governing openly released models.</p>
           </div>
           <div class="topic">
             <h3>Europe&rsquo;s strategic dependencies</h3>
-            <p>Export controls and economic security between Washington and Beijing.</p>
+            <p>How export controls and economic security shape Europe&rsquo;s room for manoeuvre between Washington and Beijing.</p>
           </div>
           <div class="topic">
             <h3>Technology in conflict</h3>
-            <p>Autonomous weapons, maritime security and ASEAN diplomacy.</p>
+            <p>Autonomous weapons, maritime security and the diplomacy of ASEAN.</p>
           </div>
         </div>
 
-        <div class="speaker-bio" id="speaking">
-          <p class="speaker-bio-label">Speaker bio</p>
-          <p id="speaker-bio-text">Cécile Carrel researches the geopolitics of AI, with a focus on compute, open-weight model governance and Europe&rsquo;s strategic dependencies. She holds a Master of Public Policy from the London School of Economics, with Distinction, and has worked at the International Crisis Group, the World Economic Forum and UNICEF. She is based in London.</p>
-          <button type="button" class="chip-btn" data-copy="speaker-bio-text">Copy bio</button>
-        </div>
         </div>
       </div>
     </section>
@@ -154,7 +133,7 @@
       <div class="container split">
         <div class="split-head"><h2 class="section-title">Get in touch</h2></div>
         <div class="split-body contact-body">
-          <p class="section-intro">For speaking invitations, research or advisory work.</p>
+          <p class="section-intro">Enquiries about speaking, research or advisory work are welcome.</p>
           <a href="mailto:cecilecrl@gmail.com" class="btn btn-primary">Email me →</a>
         </div>
       </div>
@@ -170,7 +149,9 @@
       </div>
       <div class="footer-links">
         <a href="index.html">Home</a>
-        <a href="selected-research.html">Selected Research</a>
+        <a href="selected-research.html">Research</a>
+        <a href="crisis-group.html">Crisis Group</a>
+        <a href="skills.html">Skills</a>
         <a href="mailto:cecilecrl@gmail.com">Email</a>
         <a href="https://linkedin.com/in/carrelcecile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/carrelcecile" target="_blank" rel="noopener noreferrer">GitHub</a>
