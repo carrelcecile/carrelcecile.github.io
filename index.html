@@ -32,14 +32,19 @@
 <body>
 
   <a href="#main" class="skip-link">Skip to content</a>
-  <nav class="nav" aria-label="Primary">
-    <a href="index.html" class="nav-name">Cécile Carrel</a>
-    <div class="nav-links">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="selected-research.html">Selected Research</a>
-      <a href="mailto:cecilecrl@gmail.com" class="nav-cta">Contact ↗</a>
+  <header class="masthead">
+    <div class="container masthead-title">
+      <a href="index.html" class="masthead-name">Cécile Carrel</a>
+      <p class="masthead-sub">Geopolitics of AI</p>
     </div>
-  </nav>
+    <nav class="masthead-nav" aria-label="Primary">
+      <div class="container">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="selected-research.html">Selected Research</a>
+        <a href="mailto:cecilecrl@gmail.com">Contact</a>
+      </div>
+    </nav>
+  </header>
 
   <main id="main">
 
@@ -55,14 +60,14 @@
           </nav>
         </div>
         <figure class="portrait">
-          <img src="headshot.png" alt="Portrait of Cécile Carrel" />
+          <div class="portrait-crop"><img src="headshot.png" alt="Portrait of Cécile Carrel" /></div>
           <figcaption><span>Cécile Carrel</span><span>London</span></figcaption>
         </figure>
       </div>
 
       <div class="container credentials" aria-label="Institutions">
         <div class="cred">
-          <p class="cred-label">Analysis written for</p>
+          <p class="cred-label">Work prepared for</p>
           <p class="cred-list">UN Security Council<br />EU External Action Service<br />Foreign ministries<br />Managing Boards<br />C-suite executives</p>
         </div>
         <div class="cred">
@@ -77,8 +82,9 @@
     </section>
 
     <section class="section" id="path">
-      <div class="container">
-        <h2 class="section-title">Path</h2>
+      <div class="container split">
+        <div class="split-head"><h2 class="section-title">Path</h2></div>
+        <div class="split-body">
         <div class="offer-grid">
           <div class="offer">
             <h3>Engineering</h3>
@@ -86,19 +92,21 @@
           </div>
           <div class="offer">
             <h3>Policy</h3>
-            <p>Conflict analysis at the International Crisis Group, from the Indo-Pacific to the Red Sea. A digital identity framework presented at Chatham House.</p>
+            <p>Research and communications at the International Crisis Group, on Indo-Pacific militarisation and Red Sea security. A digital identity framework presented at Chatham House.</p>
           </div>
           <div class="offer">
             <h3>Research</h3>
             <p>Work on AI compute and open-weight model governance, including an <a href="https://france-import-dependence-dashboard.streamlit.app/" target="_blank" rel="noopener noreferrer">interactive dashboard</a> on France&rsquo;s import dependence.</p>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="focus">
-      <div class="container">
-        <h2 class="section-title">Focus</h2>
+      <div class="container split">
+        <div class="split-head"><h2 class="section-title">Focus</h2></div>
+        <div class="split-body">
         <p class="section-intro">Research and advice for governments, institutions and companies.</p>
 
         <div class="topic-grid">
@@ -125,16 +133,17 @@
           <p id="speaker-bio-text">Cécile Carrel researches the geopolitics of AI, with a focus on compute, open-weight model governance and Europe&rsquo;s strategic dependencies. She holds a Master of Public Policy from the London School of Economics, with Distinction, and has worked at the International Crisis Group, the World Economic Forum and UNICEF. She is based in London.</p>
           <button type="button" class="chip-btn" data-copy="speaker-bio-text">Copy bio</button>
         </div>
+        </div>
       </div>
     </section>
 
     <section class="section" id="contact">
-      <div class="container cta-band">
-        <div>
-          <h2 class="section-title">Get in touch</h2>
+      <div class="container split">
+        <div class="split-head"><h2 class="section-title">Get in touch</h2></div>
+        <div class="split-body contact-body">
           <p class="section-intro">For speaking invitations, research or advisory work.</p>
+          <a href="mailto:cecilecrl@gmail.com" class="btn btn-primary">Email me →</a>
         </div>
-        <a href="mailto:cecilecrl@gmail.com" class="btn btn-primary">Email me →</a>
       </div>
     </section>
 
