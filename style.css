@@ -44,7 +44,7 @@ em, i, cite, address { font-style: normal; }
 
 .home-hero, .section, .page-hero { background: var(--bg); color: var(--ink); }
 .section + .section { border-top: 1px solid var(--line); }
-#speaking, #contact { background: var(--bg-alt); }
+#path, #contact { background: var(--bg-alt); }
 
 /* ===========================================================
    NAV
@@ -73,7 +73,7 @@ em, i, cite, address { font-style: normal; }
 /* ===========================================================
    SHARED TYPE
 =========================================================== */
-.eyebrow, .focus-label {
+.eyebrow {
   font-size: 12px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--ink-3);
 }
 .eyebrow { color: var(--navy); }
@@ -97,12 +97,6 @@ em, i, cite, address { font-style: normal; }
 .btn:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
 .btn-primary:hover { background: transparent; color: var(--navy); }
 
-.card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.card-tags span {
-  font-size: 14px; letter-spacing: 0.04em; padding: 4px 13px;
-  border: 1px solid var(--line-2); background: var(--bg-card); color: var(--ink-2);
-}
-
 /* ===========================================================
    HOME
 =========================================================== */
@@ -117,16 +111,12 @@ em, i, cite, address { font-style: normal; }
   position: relative; z-index: 1; width: 100%; height: 100%;
   object-fit: cover; object-position: center top;
 }
-.eyebrow { margin-bottom: 26px; }
-.home-name {
-  font-weight: 400; line-height: 1; letter-spacing: -0.012em;
-  font-size: clamp(48px, 7.2vw, 88px); margin-bottom: 32px; color: var(--navy);
+.eyebrow { margin-bottom: 28px; }
+.home-statement {
+  font-weight: 400; line-height: 1.12; letter-spacing: -0.012em;
+  font-size: clamp(34px, 4.7vw, 58px); color: var(--navy); max-width: 15em;
 }
-.lede {
-  font-size: clamp(20px, 2.1vw, 25px); line-height: 1.6;
-  color: var(--ink-2); max-width: 620px;
-}
-.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 46px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 44px; }
 
 .credentials {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
@@ -139,14 +129,9 @@ em, i, cite, address { font-style: normal; }
 
 .section { padding: 120px 3rem; }
 
-.bio { max-width: 680px; margin-top: 48px; }
-.bio p { font-size: 19.5px; line-height: 1.9; color: var(--ink-2); margin-bottom: 1.3em; }
-.bio p:last-child { margin-bottom: 0; }
-.bio p:first-child::first-letter {
-  float: left; font-size: 4.1em; line-height: 0.82; padding: 0.06em 0.1em 0 0; color: var(--navy);
-}
-.bio strong { color: var(--navy); font-weight: 500; }
+.path-note { max-width: 680px; margin-top: 56px; font-size: 18px; line-height: 1.8; color: var(--ink-3); }
 
+.section-title + .offer-grid { margin-top: 48px; }
 .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: offer; }
 .offer {
   counter-increment: offer; padding: 30px 34px 12px 0; margin-right: 34px;
@@ -159,7 +144,6 @@ em, i, cite, address { font-style: normal; }
 }
 .offer h3 { font-weight: 400; font-size: 28px; line-height: 1.18; margin-bottom: 14px; color: var(--navy); }
 .offer p { font-size: 18px; line-height: 1.8; color: var(--ink-2); }
-.focus-label { margin: 68px 0 18px; }
 
 .section-title + .topic-grid { margin-top: 52px; }
 .topic-grid { display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 72px; row-gap: 44px; }
@@ -194,6 +178,9 @@ em, i, cite, address { font-style: normal; }
 .list-page p { font-size: 18px; line-height: 1.75; color: var(--ink-2); margin-bottom: 14px; max-width: 760px; }
 .list-page ul { padding-left: 1.2em; max-width: 760px; }
 .list-page li { font-size: 18px; line-height: 1.75; color: var(--ink-2); margin-bottom: 14px; }
+.list-page li strong { color: var(--navy); font-weight: 500; }
+.list-page .meta { color: var(--ink-3); }
+.list-page .desc { display: block; margin-top: 4px; }
 .list-page a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-2); }
 .list-page a { color: var(--navy); }
 .list-page a:hover { text-decoration-color: var(--navy); }
